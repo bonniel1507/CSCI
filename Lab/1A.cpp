@@ -18,9 +18,9 @@ int main() {
 
     cout << "The smaller of the two is ";
     if (num1 > num2){
-        cout << num1;
+        cout << num2 << endl;
     } else {
-        cout << num2;
+        cout << num1 << endl;
     }
 
 	return 0;
