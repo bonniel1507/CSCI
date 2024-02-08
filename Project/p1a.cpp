@@ -11,10 +11,13 @@ using namespace std;
 
 int main() {
     srand(time(NULL));
+    // int idx = rand()%5;
     // declare variables
     char operators[] = {'+', '-', '*', '/', '%'};
+    int s = sizeof(operators) / sizeof(operators[0]);
+    int idx = rand() % s;
     int num1 = rand()%10;
-    char sign = operators[rand()%5];
+    char sign = operators[idx];
     int num2;
     int ans;
     // if()
