@@ -6,16 +6,18 @@
 
 #include <iostream>
 #include <cstdlib>
+#include <ctime>
 using namespace std;
 
 int main() {
-
+    srand(time(NULL));
     // declare variables
     char operators[] = {'+', '-', '*', '/', '%'};
     int num1 = rand()%10;
     char sign = operators[rand()%5];
     int num2;
     int ans;
+    // if()
 
     // checking the sign for next step
     if(sign == '+'){
