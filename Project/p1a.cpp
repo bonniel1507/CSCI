@@ -30,17 +30,17 @@ int main() {
         num2 = rand()%10;
         ans = num1 * num2;
     } else if(sign == '/'){
-        num2 = rand()%9+1;
+        num2 = 1 + rand()%9;
         ans = num1 / num2;
-    } else if(sign == '%'){
-        num2 = rand()%9+1;
+    } else {
+        num2 = 1+ rand()%9;
         ans = num1 % num2;
     }
     
-    int input;
+    string inputs;
     cout << "What is " << num1 << " " << sign << " " << num2 << "? ";
-    cin >> input;
-
+    cin >> inputs;
+    int input = stoi(inputs);
     // compare user input and answer
     if(input == ans){
         cout << "True" << endl;
