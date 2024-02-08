@@ -21,19 +21,19 @@ int main() {
 
     // checking the sign for next step
     if(sign == '+'){
-        num2 = rand()%9;
+        num2 = rand()%10;
         ans = num1 + num2;
     } else if(sign == '-'){
-        num2 = rand()%9;
+        num2 = rand()%10;
         ans = num1 - num2;
     } else if(sign == '*'){
-        num2 = rand()%9;
+        num2 = rand()%10;
         ans = num1 * num2;
     } else if(sign == '/'){
-        num2 = rand()%8+1;
+        num2 = rand()%9+1;
         ans = num1 / num2;
     } else if(sign == '%'){
-        num2 = rand()%8+1;
+        num2 = rand()%9+1;
         ans = num1 % num2;
     }
     
