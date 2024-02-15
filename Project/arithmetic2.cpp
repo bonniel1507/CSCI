@@ -13,7 +13,7 @@ int main() {
     srand(time(NULL));
     // declare variables
     char operators[] = {'+', '-', '*', '/', '%'};
-    int s = sizeof(operators); // / sizeof(operators[0]); // 5/1=5
+    int s = sizeof(operators) / sizeof(operators[0]); // 5/1=5
     int idx = rand() % s;
     int num1, num2, ans, questions;
     char sign;
