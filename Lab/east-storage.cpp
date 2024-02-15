@@ -19,40 +19,23 @@ int main() {
 
     string junk;        // new string variable
     getline(fin, junk); // read one line from the file
-
-    string date;
+    
+	// declare variables
+    string date, date1;
     double eastSt;
-
+    
+	// ask user for date
     cout << "Enter date: ";
-    cin >> date;
+    cin >> date1;
 
-    while(fin >> date >> eastSt){//}>> eastEl >> westSt >> westEl) { 
-        // this loop reads the file line-by-line
-        // extracting 5 values on each iteration 
-        
+    while(fin >> date >> eastSt){
         fin.ignore(INT_MAX, '\n');  //skips to the end of line, 
-        // cout << date << " " << eastSt << endl;   //ignorring the remaining columns
-        cout << "East basin storage: " << eastSt << endl;
-
-        // for example, to print the date and East basin storage:
         
-
-        // if(date == startDate) {
-        //     line++;
-        // } else if(date > endDate) {
-        //     break;
-        // }
-
-        // for(int i = 0; i < line; i++) {
-        //     if(eastEl > westEl) {
-        //         cout << date << " East" << endl;
-        //     } else if(eastEl < westEl) {
-        //         cout << date << " West" << endl;
-        //     } else {
-        //         cout << date << " Equal" << endl;
-        //     }
-        // } 
+		// print east storage
+        if(date1 == date) {
+            getline(fin, date);
+            cout << "East basin storage: " << eastSt << " billion gallons" << endl;
+        }
     }
-
     fin.close();
 }
