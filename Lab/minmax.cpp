@@ -26,14 +26,14 @@ int main() {
     double eastSt, min = INT_MAX, max = INT_MIN;
     
     while(fin >> date >> eastSt) { 
-        fin.ignore(INT_MAX, '\n'); //skips to the end of line, 
+		fin.ignore(INT_MAX, '\n'); //skips to the end of line, 
                             //ignorring the remaining columns 
         // compare
         if(eastSt < min) {
-		    min = eastSt;
+			min = eastSt;
         } 
         if(eastSt > max) {
-		    max = eastSt;
+			max = eastSt;
         }
     }  
     // print
