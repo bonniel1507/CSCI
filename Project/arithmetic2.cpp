@@ -49,7 +49,7 @@ int main() {
         }
 
         string inputs;
-        cout << "(" << i << ") " "what is " << num1 << " " << sign << " " << num2 << "? ";
+        cout << "(" << i << ") what is " << num1 << " " << sign << " " << num2 << "? ";
         cin >> inputs;
         int input = stoi(inputs);
         
