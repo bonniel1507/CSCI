@@ -62,7 +62,7 @@ int main() {
     }
 
     // cout << corrects << " " << questions << endl;
-    percent = (corrects / questions)*100;
+    percent = (corrects*100.0 / questions);
     cout << "percentage correct: " << percent << "%" << endl;
 
     cout << "letter grade: ";
