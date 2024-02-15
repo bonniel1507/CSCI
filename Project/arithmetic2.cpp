@@ -17,12 +17,11 @@ int main() {
     int idx = rand() % s;
     int num1, num2, ans, questions;
     char sign;
+    double percent, corrects = 0.0;
 
     cout << "Enter the total number of questions to ask: ";
     cin >> questions;
 
-    double percent, corrects = 0.0;
-    
     while(questions <= 0){
         cout << "The number of questions cannot be zero or negative. Re-enter: ";
         cin >> questions;
@@ -55,10 +54,10 @@ int main() {
         
         // compare user input and answer
         if(input == ans){
-            cout << "True\n" << endl;
+            cout << "true" << endl;
             corrects++;
         } else {
-            cout << "False\n" << endl;
+            cout << "false" << endl;
         }
     }
 
