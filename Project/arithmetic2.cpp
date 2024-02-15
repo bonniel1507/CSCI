@@ -49,22 +49,22 @@ int main() {
         }
 
         string inputs;
-        cout << "\n(" << i << ") " "what is " << num1 << " " << sign << " " << num2 << "? ";
+        cout << "(" << i << ") " "what is " << num1 << " " << sign << " " << num2 << "? ";
         cin >> inputs;
         int input = stoi(inputs);
         
         // compare user input and answer
         if(input == ans){
-            cout << "True" << endl;
+            cout << "True\n" << endl;
             corrects++;
         } else {
-            cout << "False" << endl;
+            cout << "False\n" << endl;
         }
     }
 
     // cout << corrects << " " << questions << endl;
     percent = (corrects / questions)*100;
-    cout << "\npercentage correct: " << percent << "%" << endl;
+    cout << "percentage correct: " << percent << "%" << endl;
 
     cout << "letter grade: ";
     if(percent >= 90.0){
