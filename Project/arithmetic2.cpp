@@ -67,15 +67,15 @@ int main() {
 
     cout << "letter grade: ";
     if(percent >= 90.0){
-        cout << "A" << endl;
+        cout << 'A' << endl;
     } else if(percent >= 80.0){
-        cout << "B" << endl;
+        cout << 'B' << endl;
     } else if(percent >= 70.0){
-        cout << "c" << endl;
+        cout << 'C' << endl;
     } else if(percent >= 60.0){
-        cout << "D" << endl;
+        cout << 'D' << endl;
     } else {
-        cout << "F" << endl;
+        cout << 'F' << endl;
     }
 
     return 0;
