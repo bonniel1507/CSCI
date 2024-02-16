@@ -14,7 +14,7 @@ int main() {
     // declare variables
     char operators[5] = {'+', '-', '*', '/', '%'};
     // int s = sizeof(operators) / sizeof(operators[0]); // 5/1=5
-    int idx, num1, num2, ans, questions;
+    int idx, num1, num2, ans, questions, input;
     char sign, grade;
     double percent, corrects = 0.0;
 
@@ -47,7 +47,6 @@ int main() {
             ans = num1 % num2;
         }
 
-        int input;
         cout << "(" << i << ") what is " << num1 << " " << sign << " " << num2 << "? ";
         cin >> input;
         // int input = stoi(inputs);
