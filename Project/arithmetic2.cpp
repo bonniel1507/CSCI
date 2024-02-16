@@ -76,7 +76,7 @@ int main() {
     } else {
         grade = 'F';
     }
-	cout << "letter grade: " << grade << endl;
+    cout << "letter grade: " << grade << endl;
 
     return 0;
 }
