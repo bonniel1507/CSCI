@@ -31,7 +31,7 @@ int main() {
         fin.ignore(INT_MAX, '\n'); //skips to the end of line, 
                             //ignorring the remaining columns 
 
-        while(date >= start && date <= end){
+        // while(date >= start && date <= end){
             cout << date;
             if(eastEl > westEl) {
                 cout << " East" << endl;
@@ -40,7 +40,7 @@ int main() {
             } else {
                 cout << " Equal" << endl;
             }
-        } 
+        // } 
     }
 
     fin.close();

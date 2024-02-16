@@ -14,8 +14,7 @@ int main() {
     // declare variables
     char operators[5] = {'+', '-', '*', '/', '%'};
     // int s = sizeof(operators) / sizeof(operators[0]); // 5/1=5
-    int idx = rand() % 5;
-    int num1, num2, ans, questions;
+    int idx, num1, num2, ans, questions;
     char sign, grade;
     double percent, corrects = 0.0;
 
@@ -29,6 +28,7 @@ int main() {
 
     for(int i = 1; i <= questions; i++){
         num1 = rand()%10;
+        idx = rand() % 5;
         sign = operators[idx];
         if(sign == '+'){
             num2 = rand()%10;
@@ -61,7 +61,6 @@ int main() {
         }
     }
 
-    // cout << corrects << " " << questions << endl;
     percent = (corrects*100 / questions);
     cout << "percentage correct: " << percent << "%" << endl;
 

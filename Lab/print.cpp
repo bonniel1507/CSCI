@@ -24,9 +24,9 @@ int main() {
     string date, start, end;
     double eastEl, westEl;
 
-    cout << "Enter starting date: " << endl;
+    cout << "Enter starting date: ";
     cin >> start;
-    cout << "Enter ending date: " << endl;
+    cout << "Enter ending date: ";
     cin >> end;
 
     while(fin >> date >> eastEl >> westEl) { 
@@ -44,7 +44,7 @@ int main() {
         // }
 
         // for(int i = 0; i < dates; i++) {
-        while(date >= start && date <= end){
+        // while(date >= start && date <= end){
             cout << date;
             if(eastEl > westEl) {
                 cout << " East" << endl;
@@ -53,7 +53,7 @@ int main() {
             } else {
                 cout << " Equal" << endl;
             }
-        } 
+        // } 
     }
 
     fin.close();
