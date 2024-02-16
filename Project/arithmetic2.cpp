@@ -12,11 +12,11 @@ using namespace std;
 int main() {
     srand(time(NULL));
     // declare variables
-    char operators[] = {'+', '-', '*', '/', '%'};
-    int s = sizeof(operators) / sizeof(operators[0]); // 5/1=5
-    int idx = rand() % s;
+    char operators[5] = {'+', '-', '*', '/', '%'};
+    // int s = sizeof(operators) / sizeof(operators[0]); // 5/1=5
+    int idx = rand() % 5;
     int num1, num2, ans, questions;
-    char sign;
+    char sign, grade;
     double percent, corrects = 0.0;
 
     cout << "Enter the total number of questions to ask: ";
@@ -47,36 +47,36 @@ int main() {
             ans = num1 % num2;
         }
 
-        string inputs;
+        int input;
         cout << "(" << i << ") what is " << num1 << " " << sign << " " << num2 << "? ";
-        cin >> inputs;
-        int input = stoi(inputs);
+        cin >> input;
+        // int input = stoi(inputs);
         
         // compare user input and answer
         if(input == ans){
             cout << "true" << endl;
-            corrects++;
+            corrects += 1.0;
         } else {
             cout << "false" << endl;
         }
     }
 
     // cout << corrects << " " << questions << endl;
-    percent = (corrects*100.0 / questions);
+    percent = (corrects*100 / questions);
     cout << "percentage correct: " << percent << "%" << endl;
 
-    cout << "letter grade: ";
-    if(percent >= 90.0){
-        cout << 'A' << endl;
-    } else if(percent >= 80.0){
-        cout << 'B' << endl;
-    } else if(percent >= 70.0){
-        cout << 'C' << endl;
-    } else if(percent >= 60.0){
-        cout << 'D' << endl;
+    if(percent >= 90){
+        grade = 'A';
+    } else if(percent >= 80){
+        grade = 'B';
+    } else if(percent >= 70){
+        grade = 'C';
+    } else if(percent >= 60){
+        grade = 'D';
     } else {
-        cout << 'F' << endl;
+        grade = 'F';
     }
+	cout << "letter grade: " << grade << endl;
 
     return 0;
 }
