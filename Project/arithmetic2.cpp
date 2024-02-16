@@ -27,8 +27,8 @@ int main() {
     }
 
     for(int i = 1; i <= questions; i++){
-        num1 = rand()%10;
         idx = rand() % 5;
+        num1 = rand()%10;
         sign = operators[idx];
         if(sign == '+'){
             num2 = rand()%10;
