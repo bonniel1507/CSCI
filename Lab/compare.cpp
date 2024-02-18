@@ -18,24 +18,24 @@ int main() {
     }
     string junk;        // new string variable
     getline(fin, junk); // read one line from the file
-
+    // declare variables
     string date, start, end;
-    double eastEl, westEl;
-
+    double eastSt, eastEl, westSt, westEl;
+    // user input
     cout << "Enter starting date: " << endl;
     cin >> start;
     cout << "Enter ending date: " << endl;
     cin >> end;
-
-    while(fin >> date >> eastEl >> westEl){ 
+    // random commet
+    while(fin >> date >> eastSt >> eastEl >> westSt >> westEl){ 
         fin.ignore(INT_MAX, '\n');  //skips to the end of line, 
                                     //ignorring the remaining columns 
-
+        // print the data
         if(date >= start && date <= end){
             cout << date;
-            if(eastEl > westEl) {
+            if(eastEl > westEl){
                 cout << " East" << endl;
-            } else if(eastEl < westEl) {
+            } else if(eastEl < westEl){
                 cout << " West" << endl;
             } else {
                 cout << " Equal" << endl;
