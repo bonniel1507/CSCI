@@ -2,7 +2,7 @@
 // bonnie.lei49@myhunter.cuny.edu
 // Course: CSCI 135
 // Instructor: Tong Yi
-// Assignment: 
+// Assignment: lab 3c
 
 #include <iostream>
 #include <fstream>
@@ -27,11 +27,11 @@ int main() {
     cout << "Enter ending date: " << endl;
     cin >> end;
 
-    while(fin >> date >> eastEl >> westEl) { 
-        fin.ignore(INT_MAX, '\n'); //skips to the end of line, 
-                            //ignorring the remaining columns 
+    while(fin >> date >> eastEl >> westEl){ 
+        fin.ignore(INT_MAX, '\n');  //skips to the end of line, 
+                                    //ignorring the remaining columns 
 
-        // while(date >= start && date <= end){
+        if(date >= start && date <= end){
             cout << date;
             if(eastEl > westEl) {
                 cout << " East" << endl;
@@ -40,9 +40,8 @@ int main() {
             } else {
                 cout << " Equal" << endl;
             }
-        // } 
+        }
     }
-
     fin.close();
 
     return 0;
