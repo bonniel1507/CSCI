@@ -19,8 +19,8 @@ int main() {
     string junk;        // new string variable
     getline(fin, junk); // read one line from the file
     // declare variables
-    string date, start, end, dates[100];
-    double eastSt, eastEl, westSt, westEl, west[100];
+    string date, start, end, dates[365];
+    double eastSt, eastEl, westSt, westEl, west[365];
     int num;
 
     // user input
