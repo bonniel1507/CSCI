@@ -24,15 +24,15 @@ int main() {
     int num;
 
     // user input
-    cout << "Enter starting date: " << endl;
+    cout << "Enter earlier date: " << endl;
     cin >> start;
-    cout << "Enter ending date: " << endl;
+    cout << "Enter later date: " << endl;
     cin >> end;
     // random commet
     while(fin >> date >> eastSt >> eastEl >> westSt >> westEl){ 
         fin.ignore(INT_MAX, '\n');  //skips to the end of line, 
                                     //ignorring the remaining columns 
-        // store into arrat
+        // store into array
         if(date >= start && date <= end){
             num++;
             dates[num] = date;
