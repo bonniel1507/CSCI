@@ -19,24 +19,24 @@ int main() {
     cout << "\nShape:";
     for(int i = 0; i < h; i++){
         cout << "\n";
-        for(int j = 0; j < w; j++){
-            cout << "*";
+        if(i%2==0){
+            for(int j = 0; j < w; j++){
+                if(j%2==0){
+                    cout << "*";
+                } else {
+                    cout << " ";
+                }
+            }
+        } else {
+            for(int j = 0; j < w; j++){
+                if(j%2==0){
+                    cout << " ";
+                } else {
+                    cout << "*";
+                }
+            }
         }
     }
 
     return 0;
 }
-
-// Write a program checkerboard.cpp that asks the user to input width and height and prints a rectangular checkerboard of the requested size using asterisks and spaces (alternating).
-
-// Example:
-// Input width: 11
-// Input height: 6
- 
-// Shape:
-// * * * * * *
-//  * * * * * 
-// * * * * * *
-//  * * * * *
-// * * * * * *
-//  * * * * *
