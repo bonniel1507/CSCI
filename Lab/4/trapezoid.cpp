@@ -16,7 +16,7 @@ int main() {
     cout << "Input height: ";
     cin >> h;
     // print
-    if(h > w/2){
+    if(h > w/2+1){
         cout << "Impossible shape!" << endl;
     } else {
         cout << "\nShape:";
