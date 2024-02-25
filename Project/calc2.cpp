@@ -13,6 +13,7 @@ using namespace std;
 
 int main() {
     ifstream fin("problems.csv");
+    // ifstream fin("p.csv");
     if(fin.fail()) {
         cerr << "File cannot be opened for reading." << endl;
         exit(1);
@@ -22,19 +23,19 @@ int main() {
 
     string txt, ans;
     char sign, grade;
-    double percent;
-    int input, numQuestions = 0, numCorrect = 0;
+    double percent, input;
+    int numQuestions = 0, numCorrect = 0;
 
     while (getline(fin, txt, ',') && getline(fin, ans)){
-        cout << " what is " << txt << "? ";
+        cout << "(" << numQuestions+1 << ") what is " << txt << "? ";
         cin >> input;
         
         // compare user input and answer
         if(input == stof(ans)){
-            cout << "true" << endl;
+            cout << "true\n" << endl;
             numCorrect += 1;
         } else {
-            cout << "false" << endl;
+            cout << "false\n" << endl;
         }
         numQuestions += 1;
     }
