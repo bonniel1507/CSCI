@@ -1,8 +1,8 @@
-// Bonnie Lei 
+// Bonnie Lei
 // bonnie.lei49@myhunter.cuny.edu
 // Course: CSCI 135
 // Instructor: Tong Yi
-// Assignment: task f
+// Assignment: task g
 
 #include <iostream>
 using namespace std;
@@ -16,17 +16,23 @@ int main() {
     cout << "Input height: ";
     cin >> h;
     // print
-    if(h > (w+1)/2){
-        cout << "Impossible shape!" << endl;
-    } else {
-        cout << "\nShape:";
-        for(int i = 0; i < h; i++){
-            cout << "\n";
+    cout << "\nShape:";
+    for(int i = 0; i < h; i++){
+        cout << "\n";
+        if(i%6 < 3){
             for(int j = 0; j < w; j++){
-                if(j >= i && j < w-i){
+                if(j%6 < 3){
                     cout << "*";
                 } else {
                     cout << " ";
+                }
+            }
+        } else {
+            for(int j = 0; j < w; j++){
+                if(j%6 < 3){
+                    cout << " ";
+                } else {
+                    cout << "*";
                 }
             }
         }
@@ -34,3 +40,4 @@ int main() {
 
     return 0;
 }
+ 
