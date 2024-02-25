@@ -15,20 +15,10 @@ int main() {
     cin >> size;
     // print
     cout << "\nShape:";
-    for(int i = 0; i < size/2; i++){
+    for (int i = 0; i < size; i++){
         cout << "\n";
-        for(int j = 0; j < size; j++){
-            if(j == i || j == size-i-1){
-                cout << "*";
-            } else {
-                cout << " ";
-            }
-        }
-    }
-    for(int i = 0; i < size/2; i++){
-        cout << "\n";
-        for(int j = 0; j < size; j++){
-            if(j == size/2-i-1 || j == size/2+i){
+        for (int j = 0; j < size; j++){
+            if(j == i || j == size - i - 1){
                 cout << "*";
             } else {
                 cout << " ";
