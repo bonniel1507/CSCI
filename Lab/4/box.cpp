@@ -17,10 +17,10 @@ int main() {
     cin >> h;
     // print
     for(int i = 0; i < h; i++){
+        cout << "\n";
         for(int j = 0; j < w; j++){
             cout << "*";
         }
-        cout << "\n";
     }
 
     return 0;
