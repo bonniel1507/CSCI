@@ -22,11 +22,10 @@ int main() {
     getline(fin, junk);
 
     string txt, ans;
-    char sign, grade;
-    double percent, input;
     int numQuestions = 0, numCorrect = 0;
 
     while (getline(fin, txt, ',') && getline(fin, ans)){
+        double input;
         cout << "(" << numQuestions+1 << ") what is " << txt << "? ";
         cin >> input;
         
@@ -40,9 +39,13 @@ int main() {
         numQuestions += 1;
     }
 
+    // percentage
+    double percent;
     percent = (numCorrect*100 / numQuestions);
     cout << "percentage correct: " << percent << "%" << endl;
 
+    // letter grade
+    char grade;
     if(percent >= 90){
         grade = 'A';
     } else if(percent >= 80){
