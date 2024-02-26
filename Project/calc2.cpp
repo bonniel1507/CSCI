@@ -6,9 +6,7 @@
 
 #include <iostream>
 #include <fstream>
-// #include <cstdlib>
-// #include <climits>
-// #include <ctime>
+#include <string>
 using namespace std;
 
 int main() {
@@ -17,8 +15,6 @@ int main() {
         cerr << "File cannot be opened for reading." << endl;
         exit(1);
     }
-    string junk;
-    getline(fin, junk);
 
     string txt, ans;
     double numQuestions = 0, numCorrect = 0;
