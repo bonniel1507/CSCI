@@ -6,14 +6,13 @@
 
 #include <iostream>
 #include <fstream>
-#include <cstdlib>
-#include <climits>
-#include <ctime>
+// #include <cstdlib>
+// #include <climits>
+// #include <ctime>
 using namespace std;
 
 int main() {
     ifstream fin("problems.csv");
-    // ifstream fin("p.csv");
     if(fin.fail()) {
         cerr << "File cannot be opened for reading." << endl;
         exit(1);
@@ -22,11 +21,14 @@ int main() {
     getline(fin, junk);
 
     string txt, ans;
-    int numQuestions = 0, numCorrect = 0;
+    double numQuestions = 0, numCorrect = 0;
 
-    while (getline(fin, txt, ',') && getline(fin, ans)){
+    while(getline(fin, txt, ',') && getline(fin, ans)){
+        numQuestions += 1;
+
+        // display question
         double input;
-        cout << "(" << numQuestions+1 << ") what is " << txt << "? ";
+        cout << "(" << numQuestions << ") what is " << txt << "? ";
         cin >> input;
         
         // compare user input and answer
@@ -36,8 +38,8 @@ int main() {
         } else {
             cout << "false\n" << endl;
         }
-        numQuestions += 1;
     }
+    fin.close();
 
     // percentage
     double percent;
