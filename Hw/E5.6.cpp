@@ -8,7 +8,9 @@
 using namespace std;
 
 string middle(string str){
-    s
+    if(str.length()){
+        
+    }
 }
 
 int main() {
