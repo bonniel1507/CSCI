@@ -15,18 +15,34 @@ bool isDivisibleBy(int n, int d){
     return (n%d == 0);
 }
 
+bool isPrime(int n){
+
+    // if n is less than 2
+    if(n < 2){
+        return false;
+    }
+
+    // loop
+    for(int i = 2; i <= n/2; i++){
+        if(isDivisibleBy(n, i)){
+            return false;
+        }
+    }
+    return true;
+}
+
 int main() {
     // ask for user input
     int num;
     cout << "Enter a number: ";
     cin >> num;
 
-    int num2;
-    cout << "Enter a number: ";
-    cin >> num2;
+    // int num2;
+    // cout << "Enter a number: ";
+    // cin >> num2;
 
     // print
-    if(isDivisibleBy(num, num2)){
+    if(isPrime(num)){
         cout << "Yes" << endl;
     } else {
         cout << "No" << endl;
