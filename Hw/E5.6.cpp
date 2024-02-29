@@ -7,6 +7,10 @@
 #include <iostream>
 using namespace std;
 
+string middle(string str){
+    s
+}
+
 int main() {
 
 
