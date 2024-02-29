@@ -8,6 +8,7 @@
 using namespace std;
 
 bool isDivisibleBy(int n, int d){
+    // when d is 0
     if(d == 0){
         return false;
     }
@@ -15,6 +16,7 @@ bool isDivisibleBy(int n, int d){
 }
 
 int main() {
+    // ask for user input
     int num;
     cout << "Enter a number: ";
     cin >> num;
@@ -23,6 +25,7 @@ int main() {
     cout << "Enter a number: ";
     cin >> num2;
 
+    // print
     if(isDivisibleBy(num, num2)){
         cout << "Yes" << endl;
     } else {
