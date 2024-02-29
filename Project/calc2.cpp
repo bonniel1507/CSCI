@@ -21,21 +21,31 @@ int main() {
 
     while(getline(fin, txt, ',') && getline(fin, ans)){
         numQuestions += 1;
+    }
 
+    string questions[numquestions];
+    string answers[numquestions];
+    int num = 0;
+    while(getline(fin, txt, ',') && getline(fin, ans)){
+        questions[num] = txt;
+        answers[num] = ans;
+    }
+    fin.close();
+
+    for(int i = 0; i <= questions; i++){
         // display question
         double input;
-        cout << "(" << numQuestions << ") what is " << txt << "? ";
+        cout << "(" << i+1 << ") what is " << questions[i] << "? ";
         cin >> input;
-        
+
         // compare user input and answer
-        if(input == stof(ans)){
+        if(input == stof(answers[i])){
             cout << "true\n" << endl;
             numCorrect += 1;
         } else {
             cout << "false\n" << endl;
         }
     }
-    fin.close();
 
     // percentage
     double percent;
