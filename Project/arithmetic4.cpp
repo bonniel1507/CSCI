@@ -22,6 +22,7 @@ int main() {
     int numQuestions = 0;
     double numCorrect = 0, answers[20];
 
+    // get question and answer into an array
     while(getline(fin, txt, ',') && getline(fin, ans)){ //&& num <= sizeof(numQuestions)
         questions[numQuestions] = txt;
         answers[numQuestions] = stof(ans);
@@ -50,10 +51,8 @@ int main() {
         // swap
         string tempQ = questions[ind];
         double tempA = answers[ind];
-
         questions[ind] =  questions[q-1];
         answers[ind] = answers[q-1];
-
         questions[q-1] = tempQ;
         answers[q-1] = tempA;
 
@@ -62,12 +61,8 @@ int main() {
             cout << "At least 60% is correct. Stop." << endl;
             break;
         }
-        // if(i == numQuestions-1){
-        //     double percent;
-        //     percent = (numCorrect*100 / numQuestions);
-        //     cout << "percentage correct: " << percent << "%" << endl;
-        // }
     }
+    // percentage
     double percent;
     percent = (numCorrect*100 / numQuestions);
     cout << "percentage correct: " << percent << "%" << endl;
