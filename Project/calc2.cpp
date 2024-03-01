@@ -8,6 +8,7 @@
 #include <fstream>
 #include <string>
 #include <array>
+// #include <cstdlib>
 #include <ctime>
 using namespace std;
 
@@ -18,16 +19,50 @@ int main() {
         exit(1);
     }
 
-    string txt, ans, questions[20];
+    string txt, ans;
     int numQuestions = 0;
-    double numCorrect = 0, answers[20];
+    double numCorrect = 0;
+    /**
+// while (getline(fin, txt)){
+    arraysize++
+    stringstream fin(txt);
+     getline(txt, eq, ','){
+        //set equ into questions array
+    }
+    getline(txt, an){
+        set text into answer array
+    }
+}
 
+**/
+    // while(getline(fin, txt, ',') && getline(fin, ans)){
+    //     numQuestions++;
+    // }
+    // fin.close();
+    // cout << numQuestions << endl;
+
+    // string questions[numQuestions];
+    // double answers[numQuestions];
+
+    string questions[20];
+    double answers[20];
+    // for(int i = 0; i < numQuestions; i++){
+    //     questions[i] = "";
+    //     answers[i] = 0;
+    // }
+    // cout << questions[0] << endl;
+
+    // int num = 0;
     while(getline(fin, txt, ',') && getline(fin, ans)){ //&& num <= sizeof(numQuestions)
         questions[numQuestions] = txt;
         answers[numQuestions] = stof(ans);
         numQuestions++;
     }
     fin.close();
+
+    // cout << answers << endl;
+    // cout << questions[0] << endl;
+    // int arraysize = sizeof(questions)/sizeof(questions[0]);
 
     srand(time(NULL));
     int ind;
@@ -64,10 +99,30 @@ int main() {
         }
         if(i == numQuestions-1){
             double percent;
-            percent = (numCorrect*100 / numQuestions);
-            cout << "percentage correct: " << percent << "%" << endl;
+        percent = (numCorrect*100 / numQuestions);
+        cout << "percentage correct: " << percent << "%" << endl;
         }
     }
+
+    // percentage
+    // double percent;
+    // percent = (numCorrect*100 / numQuestions);
+    // cout << "percentage correct: " << percent << "%" << endl;
+
+    // // letter grade
+    // char grade;
+    // if(percent >= 90){
+    //     grade = 'A';
+    // } else if(percent >= 80){
+    //     grade = 'B';
+    // } else if(percent >= 70){
+    //     grade = 'C';
+    // } else if(percent >= 60){
+    //     grade = 'D';
+    // } else {
+    //     grade = 'F';
+    // }
+    // cout << "letter grade: " << grade << endl;
 
     return 0;
 }
