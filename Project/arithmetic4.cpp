@@ -62,12 +62,15 @@ int main() {
             cout << "At least 60% is correct. Stop." << endl;
             break;
         }
-        if(i == numQuestions-1){
-            double percent;
-            percent = (numCorrect*100 / numQuestions);
-            cout << "percentage correct: " << percent << "%" << endl;
-        }
+        // if(i == numQuestions-1){
+        //     double percent;
+        //     percent = (numCorrect*100 / numQuestions);
+        //     cout << "percentage correct: " << percent << "%" << endl;
+        // }
     }
+    double percent;
+    percent = (numCorrect*100 / numQuestions);
+    cout << "percentage correct: " << percent << "%" << endl;
 
     return 0;
 }
