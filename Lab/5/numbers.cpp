@@ -31,6 +31,15 @@ bool isPrime(int n){
     return true;
 }
 
+int nextPrime(int n){
+	int num;
+	do {
+        n++;
+        isPrime(n);
+    } while(is Prime == false)
+    return num;
+}
+
 int main() {
     // ask for user input
     int num;
