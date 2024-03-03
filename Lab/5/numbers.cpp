@@ -97,32 +97,32 @@ int main() {
     cout << "Enter a number: ";
     cin >> num1;
 
+    // a, d, g
     int num2;
     cout << "Enter a number: ";
     cin >> num2;
 
-    // print
-    // if(isPrime(num)){
+    // task a
+    // if(isDivisibleBy(num1, num2)){
     //     cout << "Yes" << endl;
     // } else {
     //     cout << "No" << endl;
     // }
 
-    // get = nextPrime(num);
-    // cout << get << endl;
+    // task b
+    // if(isPrime(num1)){
+    //     cout << "Yes" << endl;
+    // } else {
+    //     cout << "No" << endl;
+    // }
+
+    // task c
+    // number = nextPrime(num1);
+    // cout << number << endl;
 
     // task D
-    // int num1;
-    // cout << "Enter a number: ";
-    // cin >> num1;
-
-    // int num2;
-    // cout << "Enter a number: ";
-    // cin >> num2;
-
-    // // print
-    // get = countPrimes(num1, num2);
-    // cout << get << endl;
+    // number = countPrimes(num1, num2);
+    // cout << number << endl;
 
     // task e
     // yn = isTwinPrime(num1);
