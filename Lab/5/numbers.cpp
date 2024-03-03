@@ -66,14 +66,26 @@ bool isTwinPrime(int n){
     return false;
 }
 
+// Task f
+int nextTwinPrime(int n){
+    int num = n+1;
+
+    while(isTwinPrime(num) == false) {
+        num++;
+    }
+
+    return num;
+}
+
 int main() {
 
     int number;
     bool yn;
+
     // ask for user input
-    // int num;
-    // cout << "Enter a number: ";
-    // cin >> num;
+    int num1;
+    cout << "Enter a number: ";
+    cin >> num1;
 
     // int num2;
     // cout << "Enter a number: ";
@@ -103,12 +115,12 @@ int main() {
     // cout << get << endl;
 
     // task e
-    int num1;
-    cout << "Enter a number: ";
-    cin >> num1;
+    // yn = isTwinPrime(num1);
+    // cout << yn << endl;
 
-    yn = isTwinPrime(num1);
-    cout << yn << endl;
+    // task f
+    number = nextTwinPrime(num1);
+    cout << number << endl;
 
     return 0;
 }
