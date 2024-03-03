@@ -77,6 +77,16 @@ int nextTwinPrime(int n){
     return num;
 }
 
+// Task g
+int largestTwinPrime(int a, int b){
+    for(int i = b; i >= a; i--){
+        if(isTwinPrime(i)){
+            return i;
+        }
+    }
+    return -1;
+}
+
 int main() {
 
     int number;
@@ -87,9 +97,9 @@ int main() {
     cout << "Enter a number: ";
     cin >> num1;
 
-    // int num2;
-    // cout << "Enter a number: ";
-    // cin >> num2;
+    int num2;
+    cout << "Enter a number: ";
+    cin >> num2;
 
     // print
     // if(isPrime(num)){
@@ -119,7 +129,11 @@ int main() {
     // cout << yn << endl;
 
     // task f
-    number = nextTwinPrime(num1);
+    // number = nextTwinPrime(num1);
+    // cout << number << endl;
+
+    // task g
+    number = largestTwinPrime(num1, num2);
     cout << number << endl;
 
     return 0;
