@@ -60,7 +60,9 @@ int countPrimes(int a, int b){
 
 // Task e
 bool isTwinPrime(int n){
-    if(isPrime(n+2) || isPrime(n-2)){
+    if(isPrime(n)){
+        return false;
+    } else if(isPrime(n+2) || isPrime(n-2)){
         return true;
     }
     return false;
