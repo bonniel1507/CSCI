@@ -2,7 +2,7 @@
 // bonnie.lei49@myhunter.cuny.edu
 // Course: CSCI 135
 // Instructor: Tong Yi
-// Assignment: lab 5a
+// Assignment: lab 5
 
 #include <iostream>
 using namespace std;
@@ -58,9 +58,18 @@ int countPrimes(int a, int b){
     return total;
 }
 
+// Task e
+bool isTwinPrime(int n){
+    if(isPrime(n+2) || isPrime(n-2)){
+        return true;
+    }
+    return false;
+}
+
 int main() {
 
-    int get;
+    int number;
+    bool yn;
     // ask for user input
     // int num;
     // cout << "Enter a number: ";
@@ -81,17 +90,25 @@ int main() {
     // cout << get << endl;
 
     // task D
+    // int num1;
+    // cout << "Enter a number: ";
+    // cin >> num1;
+
+    // int num2;
+    // cout << "Enter a number: ";
+    // cin >> num2;
+
+    // // print
+    // get = countPrimes(num1, num2);
+    // cout << get << endl;
+
+    // task e
     int num1;
     cout << "Enter a number: ";
     cin >> num1;
 
-    int num2;
-    cout << "Enter a number: ";
-    cin >> num2;
-
-    // print
-    get = countPrimes(num1, num2);
-    cout << get << endl;
+    yn = isTwinPrime(num1);
+    cout << yn << endl;
 
     return 0;
 }
