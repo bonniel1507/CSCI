@@ -33,10 +33,12 @@ bool isPrime(int n){
 
 int nextPrime(int n){
 	int num;
+    bool p;
 	do {
         n++;
-        isPrime(n);
-    } while(is Prime == false)
+        p = isPrime(n);
+        num = n;
+    } while(p == false);
     return num;
 }
 
@@ -51,11 +53,17 @@ int main() {
     // cin >> num2;
 
     // print
-    if(isPrime(num)){
-        cout << "Yes" << endl;
-    } else {
-        cout << "No" << endl;
-    }
+    // if(isPrime(num)){
+    //     cout << "Yes" << endl;
+    // } else {
+    //     cout << "No" << endl;
+    // }
+
+    int get;
+
+    get = nextPrime(num);
+    cout << get << endl;
+
 
     return 0;
 }
