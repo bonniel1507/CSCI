@@ -16,10 +16,10 @@ void sort2(int& a, int& b){
 	}
 }
 
-void sort3(int& a, int& b, int& c){
-	sort3(a, b);
-	sort3(b, c);
-	sort3(a, c);
+void sort3(int& c, int& d, int& e){
+	sort3(c, d);
+	sort3(d, e);
+	sort3(c, e);
 }
 
 int main() {
