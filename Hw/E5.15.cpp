@@ -17,9 +17,9 @@ void sort2(int& d, int& e){
 }
 
 void sort3(int& a, int& b, int& c){
-	sort3(a, b);
-	sort3(b, c);
-	sort3(a, c);
+	sort2(a, b);
+	sort2(b, c);
+	sort2(a, c);
 }
 
 int main() {
