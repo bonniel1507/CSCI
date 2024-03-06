@@ -9,10 +9,13 @@
 using namespace std;
 
 int main() {
+
+    // user input
     string str;
     cout << "Input: ";
-    getline(cin, str);
+    getline(cin, str); // doesn't stop at space
 
+    // print ASCII code
     for(int i = 0; i < str.length(); i++){
         cout << str[i] << " " << (int)str[i] << endl;
     }
