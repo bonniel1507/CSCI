@@ -19,7 +19,7 @@ void sort2(int& d, int& e){
 void sort3(int& a, int& b, int& c){
 	sort2(a, b);
 	sort2(b, c);
-	sort2(a, c);
+	sort2(a, b);
 }
 
 int main() {
@@ -34,6 +34,8 @@ int main() {
 	cin >> c;
 	// smallest to greatest
 	sort3(a, b, c);
+
+	cout << a << b << c;
 
 	return 0;
 }
