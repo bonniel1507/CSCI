@@ -18,6 +18,6 @@ int main() {
 	int a = 9, b = 3;
 	sort2(a, b);
 	cout << a;
-//
+
     return 0;
 }
