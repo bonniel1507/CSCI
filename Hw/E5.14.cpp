@@ -7,17 +7,22 @@
 #include <iostream>
 using namespace std;
 
-void sort2(int a, int b){
+void sort2(int& a, int& b){
 	if(a > b){
-		swap(a, b);
+		int temp = a;
+		a = b;
+		b = temp;
 	}
 }
 
 int main() {
 
-	int a = 9, b = 3;
+	int a, b;
+	cout << "Enter a number: ";
+	cin >> a;
+	cout << "Enter a number: ";
+	cin >> b;
 	sort2(a, b);
-	cout << a;
 
 	return 0;
 }
