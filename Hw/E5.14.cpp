@@ -19,5 +19,5 @@ int main() {
 	sort2(a, b);
 	cout << a;
 
-    return 0;
+	return 0;
 }
