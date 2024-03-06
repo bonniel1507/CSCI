@@ -7,19 +7,19 @@
 #include <iostream>
 using namespace std;
 
-void sort2(int& a, int& b){
+void sort2(int& d, int& e){
 	// smaller number in front
-	if(a > b){
-		int temp = a;
-		a = b;
-		b = temp;
+	if(d > e){
+		int temp = d;
+		d = e;
+		e = temp;
 	}
 }
 
-void sort3(int& c, int& d, int& e){
-	sort3(c, d);
-	sort3(d, e);
-	sort3(c, e);
+void sort3(int& a, int& b, int& c){
+	sort3(a, b);
+	sort3(b, c);
+	sort3(a, c);
 }
 
 int main() {
