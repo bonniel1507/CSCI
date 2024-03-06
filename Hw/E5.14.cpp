@@ -8,6 +8,7 @@
 using namespace std;
 
 void sort2(int& a, int& b){
+	// smaller number in front
 	if(a > b){
 		int temp = a;
 		a = b;
@@ -18,10 +19,12 @@ void sort2(int& a, int& b){
 int main() {
 
 	int a, b;
+	// user input
 	cout << "Enter a number: ";
 	cin >> a;
 	cout << "Enter a number: ";
 	cin >> b;
+	// smallest to greatest
 	sort2(a, b);
 
 	return 0;
