@@ -23,7 +23,7 @@ int main() {
     double numCorrect = 0, answers[20];
 
     // get question and answer into an array
-    while(getline(fin, txt, ',') && getline(fin, ans)){ //&& num <= sizeof(numQuestions)
+    while(getline(fin, txt, ',') && getline(fin, ans)){
         questions[numQuestions] = txt;
         answers[numQuestions] = stof(ans);
         numQuestions++;
