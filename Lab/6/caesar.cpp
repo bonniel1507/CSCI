@@ -21,18 +21,21 @@ char shiftChar(char c, int rshift){
     //         c -= 26;
     //     }
     // }
+
+    // skip puntuation
     if(65 <= c && c <= 90){
-        c += rshift;
-        if(c > 90){
-            c -= 26;
+        if(c + rshift > 90){
+            c -= 26; // wrap
         }
+        c += rshift;
     } else if(97 <= c && c <= 122){
-        c += rshift;
-        if(c > 122){
-            c -= 26;
+        if(c + rshift > 122){
+            c -= 26; // wrap
         }
+        c += rshift;
     }
     return c;
+
 }
 
 string encryptCaesar(string plaintext, int rshift){
@@ -40,7 +43,6 @@ string encryptCaesar(string plaintext, int rshift){
     for(int i = 0; i < plaintext.length(); i++){
         plaintext[i] = shiftChar(plaintext[i] , rshift);
     }
-
     return plaintext;
 
 }
