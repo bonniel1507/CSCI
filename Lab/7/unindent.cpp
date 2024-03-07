@@ -25,7 +25,7 @@ int main() {
 
 	// user input
 	string line;
-	cout << "Enter a string: ";
+	// cout << "Enter a string: ";
 	getline(cin, line);
 	// print
 	cout << removeLeadingSpaces(line) << endl;
