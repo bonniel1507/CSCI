@@ -10,13 +10,32 @@ using namespace std;
 
 char shiftChar(char c, int rshift){
 
-    c += rshift;
-
+    // if(65 <= (int)c && (int)c <= 90){
+    //     c += rshift;
+    //     if((int)c > 90){
+    //         c -= 26;
+    //     }
+    // } else if(97 <= (int)c && (int)c <= 122){
+    //     c += rshift;
+    //     if((int)c > 122){
+    //         c -= 26;
+    //     }
+    // }
+    if(65 <= c && c <= 90){
+        c += rshift;
+        if(c > 90){
+            c -= 26;
+        }
+    } else if(97 <= c && c <= 122){
+        c += rshift;
+        if(c > 122){
+            c -= 26;
+        }
+    }
     return c;
 }
 
 string encryptCaesar(string plaintext, int rshift){
-    // char c;
 
     for(int i = 0; i < plaintext.length(); i++){
         plaintext[i] = shiftChar(plaintext[i] , rshift);
@@ -37,12 +56,8 @@ int main() {
     cout << "Enter shift: ";
     cin >> shift;
 
-    cout << encryptCaesar(str, shift) << endl;
-
-    // print ASCII code
-    // for(int i = 0; i < str.length(); i++){
-    //     cout << str[i] << " " << (int)str[i] << endl;
-    // }
+    // print
+    cout << "Ciphertext: " << encryptCaesar(str, shift) << endl;
 
     return 0;
 }
