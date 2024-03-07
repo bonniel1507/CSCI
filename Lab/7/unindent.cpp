@@ -26,7 +26,7 @@ int main() {
 	// user input
 	string line;
 	// print
-	while(getline(cin, line){
+	while(getline(cin, line)){
 		cout << removeLeadingSpaces(line) << endl;
 	}
 
