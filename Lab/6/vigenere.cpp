@@ -2,7 +2,7 @@
 // bonnie.lei49@myhunter.cuny.edu
 // Course: CSCI 135
 // Instructor: Tong Yi
-// Assignment: lab 6b
+// Assignment: lab 6c
 
 #include <iostream>
 #include <cctype>
