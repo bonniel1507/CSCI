@@ -33,23 +33,23 @@ int countChar(string line, char c){
 	return num;
 }
 
-// int countLine(string line){
-// 	int lines = 0;
+int countLine(string line){
+	int lines = 0;
 
-// 	for(int i = 0; i < line.length(); i++){
-// 		if(line[i] == '\n'){
-// 			lines++;
-// 		}
-// 	}
+	for(int i = 0; i < line.length(); i++){
+		if(line[i] == '\n'){
+			lines++;
+		}
+	}
 
-// 	return lines;
-// }
+	return lines;
+}
 
 int main() {
 
 	// user input
 	string str, line1;
-	int lines, indent = 0;
+	int lines, indent;
 	// print
 
 	/*
@@ -60,35 +60,13 @@ int main() {
 	step ?: check to see if the very first char after the spaces is a closing curly brackets
 	*/
 
-	// string line[8];
-	// int ind = 0;
-
-
-	while(getline(cin, str, '\n')){
-		// line1 += removeLeadingSpaces(str);
-		// line[ind] = removeLeadingSpaces(str);
-		// ind++;
-		str = removeLeadingSpaces(str);
-		cout << str << endl;
-		indent += countChar(str, '{');
-		indent -= countChar(str, '}');
-		for(int i = 0; i < indent; i++){
-			cout << "\t";
-		}
+	while(getline(cin, str)){
+		line1 += removeLeadingSpaces(str);
 	}
 
-	// lines = countLine(line1);
+	lines = countLine(line1);
 
-	// for(int i = 0; i < 8; i++){
-	// 	cout << line[i] << endl;
-	// }
-
-	// for(int i = 0; i < indents; i++){
-	// 	cout << "\t";
-	// }
-
-
-	// cout << indent << endl;
+	cout << lines << endl;
 
 	// string line[lines];
 
