@@ -70,11 +70,11 @@ int main() {
 		// ind++;
 		str = removeLeadingSpaces(str);
 		cout << str << endl;
-		indent += countChar(str, '{');
-		indent -= countChar(str, '}');
 		for(int i = 0; i < indent; i++){
 			cout << "\t";
 		}
+		indent += countChar(str, '{');
+		indent -= countChar(str, '}');
 	}
 
 	// lines = countLine(line1);
