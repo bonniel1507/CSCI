@@ -21,6 +21,22 @@ string removeLeadingSpaces(string line){
 	return line;
 }
 
+string removeSpaces(string line){
+
+	int s = 0;
+	// loop through the string
+	for(int i = line.length(); i >= 0; i--){
+		if(isspace(line[i])){
+			s++;
+		} else {
+			break;
+		}
+	}
+	line = line.substr(0, line.length()-s+1);
+
+	return line;
+}
+
 int countChar(string line, char c){
 
 	int num = 0;
@@ -33,68 +49,39 @@ int countChar(string line, char c){
 	return num;
 }
 
-// int countLine(string line){
-// 	int lines = 0;
-
-// 	for(int i = 0; i < line.length(); i++){
-// 		if(line[i] == '\n'){
-// 			lines++;
-// 		}
-// 	}
-
-// 	return lines;
-// }
-
 int main() {
 
 	// user input
-	string str, line1;
-	int lines, indent = 0;
+	string str;
+	int indent = 0;
 	// print
-
-	/*
-	step 1: tab by the number in the counter
-	step 2: check for open curly brackets and add to the counter
-	step 3: check for close curly brackets and decrease from the counter
-	step 4: print removing space line
-	step ?: check to see if the very first char after the spaces is a closing curly brackets
-	*/
-
-	// string line[8];
-	// int ind = 0;
-
-
 	while(getline(cin, str, '\n')){
-		// line1 += removeLeadingSpaces(str);
-		// line[ind] = removeLeadingSpaces(str);
-		// ind++;
 		str = removeLeadingSpaces(str);
-		cout << str << endl;
+		str = removeSpaces(str);
+		// decrease indent if there's a closing curly brackets
+		if(str[0] == '}'){
+			indent -= countChar(str, '}');
+		}
 		for(int i = 0; i < indent; i++){
 			cout << "\t";
 		}
-		indent += countChar(str, '{');
-		indent -= countChar(str, '}');
+		// increase indent if there's a closing curly brackets
+		if(str[str.length()-1] == '{'){
+			indent += countChar(str, '{');
+		}
+		cout << "-" << str << endl;
 	}
-
-	// lines = countLine(line1);
-
-	// for(int i = 0; i < 8; i++){
-	// 	cout << line[i] << endl;
-	// }
-
-	// for(int i = 0; i < indents; i++){
-	// 	cout << "\t";
-	// }
-
-
-	// cout << indent << endl;
-
-	// string line[lines];
-
-	// cout << line1 << endl;
-
-	// indent = countChar(line2, '{') << endl;
 
     return 0;
 }
+
+/*
+                int main(){
+           // Hi, I'm a program!
+int x = 1;
+    for(int i = 0; i < 10; i++) {
+cout << i;
+          cout << endl;
+ }
+    }
+*/
