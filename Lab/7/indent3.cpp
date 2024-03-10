@@ -21,21 +21,21 @@ string removeLeadingSpaces(string line){
 	return line;
 }
 
-// string removeBackSpaces(string line){
+string removeBackSpaces(string line){
 
-// 	int s = 0;
-// 	// loop through the string
-// 	for(int i = line.length()-1; i >= 0; i--){
-// 		if(isspace(line[i])){
-// 			s++;
-// 		} else {
-// 			break;
-// 		}
-// 	}
-// 	line = line.substr(0, line.length()-s+1);
+	int s = 0;
+	// loop through the string
+	for(int i = line.length()-1; i >= 0; i--){
+		if(isspace(line[i])){
+			s++;
+		} else {
+			break;
+		}
+	}
+	line = line.substr(0, line.length()-s+1);
 
-// 	return line;
-// }
+	return line;
+}
 
 int countChar(string line, char c){
 
@@ -57,18 +57,18 @@ int main() {
 	// print
 	while(getline(cin, str, '\n')){
 		str = removeLeadingSpaces(str);
-		// str = removeBackSpaces(str);
+		str = removeBackSpaces(str);
 		// decrease indent if there's a closing curly brackets
-		// if(str[0] == '}'){
-		indent -= countChar(str, '}');
-		// }
+		if(str[0] == '}'){
+			indent -= countChar(str, '}');
+		}
 		for(int i = 0; i < indent; i++){
 			cout << "\t";
 		}
 		// increase indent if there's a closing curly brackets
-		// if(str[str.length()-1] == '{'){
-		indent += countChar(str, '{');
-		// }
+		if(str[str.length()-1] == '{'){
+			indent += countChar(str, '{');
+		}
 		cout << "-" << str << endl;
 	}
 
