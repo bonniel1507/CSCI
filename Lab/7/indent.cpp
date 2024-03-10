@@ -49,8 +49,14 @@ int main() {
 
 	// print
 	while(getline(cin, str, '\n')){
-		for(int i = 0; i < indent; i++){
-			cout << "\t";
+		if(removeLeadingSpaces(str)[0] == '}'){
+			for(int i = 0; i < indent-1; i++){
+				cout << "\t";
+			}
+		} else {
+			for(int i = 0; i < indent; i++){
+				cout << "\t";
+			}
 		}
 
 		indent += countChar(str, '{');
