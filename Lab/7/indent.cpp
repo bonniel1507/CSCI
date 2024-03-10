@@ -56,7 +56,7 @@ int main() {
 		indent += countChar(str, '{');
 		indent -= countChar(str, '}');
 
-		cout << removeLeadingSpaces(str);
+		cout << removeLeadingSpaces(str) << endl;
 	}
 
     return 0;
