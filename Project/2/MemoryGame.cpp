@@ -4,8 +4,8 @@
 // Instructor: Tong Yi
 // Assignment: project 2
 
-#include <iostream>
-using namespace std;
+// #include <iostream>
+// using namespace std;
 
 #include "MemoryGame.hpp"
 
