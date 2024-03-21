@@ -3,15 +3,6 @@
 #include "MemoryGame.hpp"
 using namespace std;
 
-void printSeparatedLine(int size) {
-	cout << "+"; //the first +
-	//draw -----+ for (size) many times
-	for (int i = 0; i < size; i++)
-	cout << "-----+";
-
-	cout << endl;
-}
-
 int main() {
 
 	MemoryGame game;

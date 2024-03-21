@@ -101,39 +101,23 @@ MemoryGame::~MemoryGame() {
 	bShown = nullptr;
 }
 
-// void printArray(string arr[], int size){
-// 	cout << "hI" << endl;
-
-// 	for(int i = 0; i < size; i++){
-// 		cout << arr[i] << " ";
-// 	}
-// }
-
 void MemoryGame::randomize() {
 //TODO: placeholder, do not need to implement in Task A
-// cout << numSlots << endl;
-	// int size = sizeof(values) / sizeof(values[0]);
-	// cout << size << endl;
-
 	for(int i = numSlots; i > 0; i--){
 		int ind = rand() % i;
 		string temp = values[ind];
 		values[ind] = values[i-1];
 		values[i-1] = temp;
-		//cout << values[i-1] << endl;
-
 	}
-	// printArray(values, size);
+}
 
+void printSeparatedLine(int size) {
+	cout << "+"; //the first +
+	//draw -----+ for (size) many times
+	for (int i = 0; i < size; i++)
+	cout << "-----+";
 
-	/*
-	In this task, we will randomize the elements in data member array values, whether the elements are numbers or strings.
-	Based on the code of Task A, define randomize function. The idea is similar to the randomization process of Project 1 Task D.
-	1. Initialize size to be the number of elements of array values, which is saved in data member ... (you find this out).
-	2. Generate a random index in [0, size). Swap the element at chosen index with the last element in values.
-	3. Then reduce size by 1 so that we do not consider the already-chosen element, which resides in the last element of values.
-	4. Continue Step 2-3 until size is 1 (why not 0? Hint: do we need to randomize if there is only one element left in the array to be randomized?) Said differently, as long as size is larger than 1, run codes in Steps 2-3.
-	*/
+	cout << endl;
 }
 
 void MemoryGame::display() const {
@@ -145,6 +129,13 @@ void MemoryGame::display() const {
 	//setw(3) before i means i occupies 3-character,
 	//For example, if i has only two digits,
 	//then pad a space to its left.
-
 	cout << endl;
+
+	printSeparatedLine(numSlots);
+
+	for(int i = 0; i < numSlots; i++){
+		cout << "|  " << values[i];
+	}
+	cout << "|" << endl;
+	printSeparatedLine(numSlots);
 }
