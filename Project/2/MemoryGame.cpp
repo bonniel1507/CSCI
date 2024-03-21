@@ -126,16 +126,21 @@ void MemoryGame::display() const {
 	cout << " ";
 	for (int i = 0; i < numSlots; i++)
 	cout << setw(3) << i << setw(3) << " ";
+	// cout << "  " << i << "  " << " ";
 	//setw(3) before i means i occupies 3-character,
 	//For example, if i has only two digits,
 	//then pad a space to its left.
 	cout << endl;
 
-	printSeparatedLine(numSlots);
+	// string arr[] = {"111", "222", "322", "444", "555", "666", "777", "888", "999"};
 
+	printSeparatedLine(numSlots);
 	for(int i = 0; i < numSlots; i++){
 		cout << "|  " << values[i];
+		// cout << "|  " << arr[i];
 	}
 	cout << "|" << endl;
 	printSeparatedLine(numSlots);
+// cout << "k";
+	// printSeparatedLine(5);
 }

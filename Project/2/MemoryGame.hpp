@@ -5,7 +5,7 @@ using namespace std;
 class MemoryGame {
 public: //public method member, any class can use these methods
     MemoryGame();
-       //default constructor, with 3 pairs of random integers in range [0, 999] 
+       //default constructor, with 3 pairs of random integers in range [0, 999]
        //placed in 8 blocks (two blocks are empty).
     MemoryGame(int numPairs, int numSlots);
        //Place numPairs pairs of random integers in range [0, 999] in numSlots space, need numPairs > 0, numSlots > 0, and numSlots >= 2 * numPairs
@@ -20,10 +20,10 @@ public: //public method member, any class can use these methods
     void randomize();
         //randomize the layout of elements in values.
     int input() const;
-        //input an int that is a valid index and 
+        //input an int that is a valid index and
         //the corresponding element of values is not shown yet.
         //That is, the input i is in [0, numSlots) and
-        //bShown[i] is false. 
+        //bShown[i] is false.
 private: //private data members, private means that
          //only methods in this class, not other class,
          //can access or modify these data members.
@@ -43,4 +43,4 @@ private: //private data members, private means that
         //otherwise values[i] is not shown,
         //where 0 <= i and i < numSlots.
 };
-#endif 
+#endif
