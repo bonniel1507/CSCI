@@ -5,6 +5,7 @@
 // Assignment: project 2
 
 // #include <iostream>
+// #include <ctime>
 // using namespace std;
 
 #include "MemoryGame.hpp"
@@ -100,15 +101,30 @@ MemoryGame::~MemoryGame() {
 	bShown = nullptr;
 }
 
+// void printArray(string arr[], int size){
+// 	cout << "hI" << endl;
+
+// 	for(int i = 0; i < size; i++){
+// 		cout << arr[i] << " ";
+// 	}
+// }
+
 void MemoryGame::randomize() {
 //TODO: placeholder, do not need to implement in Task A
-	int size = sizeof(values) / sizeof(values[0]);
-	for(int i = size-1; i > 0; i--){
+// cout << numSlots << endl;
+	// int size = sizeof(values) / sizeof(values[0]);
+	// cout << size << endl;
+
+	for(int i = numSlots; i > 0; i--){
 		int ind = rand() % i;
 		string temp = values[ind];
-		values[ind] = values[i];
-		values[i] = temp;
+		values[ind] = values[i-1];
+		values[i-1] = temp;
+		//cout << values[i-1] << endl;
+
 	}
+	// printArray(values, size);
+
 
 	/*
 	In this task, we will randomize the elements in data member array values, whether the elements are numbers or strings.

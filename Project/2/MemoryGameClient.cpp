@@ -15,6 +15,7 @@ int main() {
 	int size = sizeof(words) / sizeof(words[0]);
 	MemoryGame game3(words, 3, 9);
 	game3.~MemoryGame();
+	game3.randomize();
 
 	return 0;
 }
