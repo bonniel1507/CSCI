@@ -29,7 +29,7 @@ MemoryGame::MemoryGame(int numPair, int numSlot) {
 	bool *arr2 = new bool[numSlots];
 
 	srand(time(NULL));
-	for(int i = 0; numSlots; i+=2){
+	for(int i = 0; i < numSlots; i+=2){
 		if(i >= numPairs*2){
 			break;
 		}
@@ -59,7 +59,7 @@ MemoryGame::MemoryGame(string* words, int size, int numSlot) {
 
 	// int j = 0;
 
-	for(int i = 0; numSlots; i+=2){
+	for(int i = 0; i < numSlots; i+=2){
 		if(i >= numPairs*2){
 			break;
 		}
