@@ -13,6 +13,25 @@ MemoryGame::MemoryGame() {
 //TODO: place your code here
 	numPairs = 3;
 	numSlots = 8;
+
+	string *arr = new string[numSlots];
+	bool *arr2 = new bool[numSlots];
+
+	// srand(time(NULL));
+	for(int i = 0; i < numSlots; i+=2){
+		if(i >= numPairs*2){
+			break;
+		}
+
+		string r = to_string(rand() % 1000);
+		arr[i] = r;
+		arr[i+1] = r;
+		arr2[i] = false;
+		arr2[i+1] = false;
+	}
+
+	this->values = arr;
+	this->bShown = arr2;
 }
 
 MemoryGame::MemoryGame(int numPair, int numSlot) {
@@ -28,7 +47,7 @@ MemoryGame::MemoryGame(int numPair, int numSlot) {
 	string *arr = new string[numSlots];
 	bool *arr2 = new bool[numSlots];
 
-	srand(time(NULL));
+	// srand(time(NULL));
 	for(int i = 0; i < numSlots; i+=2){
 		if(i >= numPairs*2){
 			break;
