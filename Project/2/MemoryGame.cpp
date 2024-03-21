@@ -138,4 +138,13 @@ void MemoryGame::randomize() {
 
 void MemoryGame::display() const {
 //TODO: placeholder, do not need to implement in Task A
+//print labels
+	cout << " ";
+	for (int i = 0; i < numSlots; i++)
+	cout << setw(3) << i << setw(3) << " ";
+	//setw(3) before i means i occupies 3-character,
+	//For example, if i has only two digits,
+	//then pad a space to its left.
+
+	cout << endl;
 }
