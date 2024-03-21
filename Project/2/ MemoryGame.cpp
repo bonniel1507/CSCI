@@ -28,7 +28,7 @@ MemoryGame::MemoryGame(int numPair, int numSlot) {
 	int *arr = new int[numSlots];
 	bool *arr2 = new bool[numSlots];
 
-	srand(time(NULL));
+	// srand(time(NULL));
 	for(int i = 0; arr.size(); i+=2){
 		if(i >= numPairs*2){
 			break;
