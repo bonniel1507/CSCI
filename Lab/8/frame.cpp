@@ -2,7 +2,7 @@
 // bonnie.lei49@myhunter.cuny.edu
 // Course: CSCI 135
 // Instructor: Tong Yi
-// Assignment: lab8c
+// Assignment: lab8d
 
 #include <iostream>
 #include <cassert>
