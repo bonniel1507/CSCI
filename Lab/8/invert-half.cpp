@@ -94,8 +94,12 @@ int main() {
 	int out[MAX_H][MAX_W];
 
 	for(int row = 0; row < h; row++) {
-		for(int col = col / 2; col < w; col++) {
-			out[row][col] = 255 - img[row][col];
+		for(int col = 0; col < w; col++) {
+			if(col < w/2){
+				out[row][col] = img[row][col];
+			} else {
+				out[row][col] = 255 - img[row][col];
+			}
 		}
 	}
 
