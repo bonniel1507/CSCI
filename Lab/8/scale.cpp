@@ -97,6 +97,8 @@ int main() {
 		for(int col = w*2-1; col >= 0; col-=2) {
 			out[row][col] = img[row/2][col/2];
 			out[row-1][col-1] = img[row/2][col/2];
+			out[row][col-1] = img[row/2][col/2];
+			out[row-1][col] = img[row/2][col/2];
 		}
 	}
 
