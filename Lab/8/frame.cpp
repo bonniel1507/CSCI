@@ -95,10 +95,14 @@ int main() {
 
 	for(int row = 0; row < h; row++) {
 		for(int col = 0; col < w; col++) {
-			if((row == h/2 + h/4 || row == h/4 && col < w/2 + w/4 && col > w/4) || (col == w/2 + w/4 || col == w/4 && row < h/2 + h/4 && row > h/4)){
-				out[row][col] = 255;
+			if(row < h/2 + h/4 && row > h/4 && col < w/2 + w/4 && col > w/4){
+				if(row == h/2 + h/4 || row == h/4 || col == w/2 + w/4 || col == w/4){
+					out[row][col] = 255;
+				} else {
+					out[row][col] = img[row][col];
+				}
 			} else {
-				out[row][col] = img[row][col];
+					out[row][col] = img[row][col];
 			}
 		}
 	}
