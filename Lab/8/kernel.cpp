@@ -103,7 +103,17 @@ int main() {
 			int g = (row == h-1 || col == 0) ? 0 : img[row+1][col-1];
 			int h2 = (row == h-1) ? 0 : img[row+1][col];
 			int i = (row == h-1 || col == w-1) ? 0 : img[row+1][col+1];
-			out[row][col] = (g+2(h2)+i)-(a+2b+c);
+
+			int c;
+			if((g+2*h2+i)-(a+2*b+c) < 0){
+				c = 0;
+			} else if((g+2*h2+i)-(a+2*b+c) > 255){
+				c = 255;
+			} else {
+				c = (g+2*h2+i)-(a+2*b+c);
+			}
+			
+			out[row][col] = c;
 		}
 	}
 
