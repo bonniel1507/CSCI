@@ -2,7 +2,7 @@
 // bonnie.lei49@myhunter.cuny.edu
 // Course: CSCI 135
 // Instructor: Tong Yi
-// Assignment: lab8e
+// Assignment: lab8a
 
 #include <iostream>
 #include <cassert>
@@ -93,17 +93,19 @@ int main() {
 	// for example we copy its contents into a new array
 	int out[MAX_H][MAX_W];
 
-	for(int row = h*2-1; row >= 0; row-=2) {
-		for(int col = w*2-1; col >= 0; col-=2) {
-			out[row][col] = img[row/2][col/2];
-			out[row-1][col-1] = img[row/2][col/2];
-			out[row][col-1] = img[row/2][col/2];
-			out[row-1][col] = img[row/2][col/2];
+	for(int row = h; row >= 0; row-=2) {
+		for(int col = w; col >= 0; col-=2) {
+			int avg = (img[row][col] + img[row-1][col-1] + img[row][col-1] + img[row-1][col]) /4;
+
+			out[row][col] = avg;
+			out[row-1][col-1] = avg;
+			out[row][col-1] = avg;
+			out[row-1][col] = avg;
 		}
 	}
 
 	// and save this new image to file "outImage.pgm"
-	writeImage(out, h*2, w*2);
+	writeImage(out, h, w);
 
     return 0;
 }
