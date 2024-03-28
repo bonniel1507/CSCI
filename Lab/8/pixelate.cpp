@@ -2,7 +2,7 @@
 // bonnie.lei49@myhunter.cuny.edu
 // Course: CSCI 135
 // Instructor: Tong Yi
-// Assignment: lab8a
+// Assignment: lab8f
 
 #include <iostream>
 #include <cassert>
@@ -93,14 +93,14 @@ int main() {
 	// for example we copy its contents into a new array
 	int out[MAX_H][MAX_W];
 
-	for(int row = h; row >= 0; row-=2) {
-		for(int col = w; col >= 0; col-=2) {
-			int avg = (img[row][col] + img[row-1][col-1] + img[row][col-1] + img[row-1][col]) /4;
+	for(int row = 0; row < h; row+=2) {
+		for(int col = 0; col < w; col+=2) {
+			int avg = (img[row][col] + img[row+1][col+1] + img[row][col+1] + img[row+1][col]) /4;
 
 			out[row][col] = avg;
-			out[row-1][col-1] = avg;
-			out[row][col-1] = avg;
-			out[row-1][col] = avg;
+			out[row+1][col+1] = avg;
+			out[row][col+1] = avg;
+			out[row+1][col] = avg;
 		}
 	}
 
