@@ -4,9 +4,10 @@
 // Instructor: Tong Yi
 // Assignment: project 2
 
-// #include <iostream>
-// #include <ctime>
-// using namespace std;
+#include <iostream>
+#include <ctime>
+#include <string>
+using namespace std;
 
 #include "MemoryGame.hpp"
 #include <iomanip>
@@ -121,6 +122,15 @@ void printSeparatedLine(int size) {
 	cout << endl;
 }
 
+// int length2(int num){
+// 	int l = 0;
+// 	while(num != 0){
+// 		l++;
+// 		num /= 10;
+// 	}
+// 	return l;
+// }
+
 void MemoryGame::display() const {
 //TODO: placeholder, do not need to implement in Task A
 //print labels
@@ -132,12 +142,17 @@ void MemoryGame::display() const {
 	//then pad a space to its left.
 	cout << endl;
 
-	// string arr[] = {"111", "222", "322", "444", "555", "666", "777", "888", "999"};
+	string arr[] = {"111", "222", "333", "444", "555", "666", "777", "", ""};
 
 	printSeparatedLine(numSlots);
 	for(int i = 0; i < numSlots; i++){
-		cout << "|  " << values[i];
-		// cout << "|  " << arr[i];
+		cout << "|" << setw(5) << arr[i];
+		// if(arr[i] == ""){//values[i] == ""){
+		// 	cout << "   ";
+		// } else {
+		// 	// cout << values[i];
+			// cout << 5-arr[i].length();
+		// }
 	}
 	cout << "|" << endl;
 	printSeparatedLine(numSlots);
