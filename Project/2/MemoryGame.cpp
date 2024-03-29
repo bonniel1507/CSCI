@@ -146,7 +146,12 @@ void MemoryGame::display() const {
 
 	printSeparatedLine(numSlots);
 	for(int i = 0; i < numSlots; i++){
-		cout << "|" << setw(5) << arr[i];
+
+		if(bShown[i]){
+			cout << "|" << setw(5) << arr[i];
+		} else {
+			cout << "|" << setw(5) << " ";
+		}
 		// if(arr[i] == ""){//values[i] == ""){
 		// 	cout << "   ";
 		// } else {
