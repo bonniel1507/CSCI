@@ -2,7 +2,7 @@
 // bonnie.lei49@myhunter.cuny.edu
 // Course: CSCI 135
 // Instructor: Tong Yi
-// Assignment: 9c
+// Assignment: 9e
 
 #include <iostream>
 #include <cmath>
@@ -28,13 +28,25 @@ Coord3D * fartherFromOrigin(Coord3D *p1, Coord3D *p2){
 }
 
 void move(Coord3D *ppos, Coord3D *pvel, double dt){
-    ppos->x = pvel.x * dt + ppos->x;
-    ppos->y = pvel.x * dt + ppos->y;
-    ppos->z = pvel.x * dt + ppos->z;
+    ppos->x = pvel->x * dt + ppos->x;
+    ppos->y = pvel->y * dt + ppos->y;
+    ppos->z = pvel->z * dt + ppos->z;
 }
-// x' = x + vel.x * dt;
-// y' = y + vel.x * dt;
-// z' = z + vel.x * dt;
+
+// allocate memory and initialize
+Coord3D* createCoord3D(double x, double y, double z){
+    Coord3D a = new Coord3D;
+    a->x = x;
+    a->y = y;
+    a->z = z;
+    return a;
+}
+
+// free memory
+void deleteCoord3D(Coord3D *p){
+    delete p;
+}
+
 int main() {
     // a
     // Coord3D pointP = {10, 20, 30};
@@ -52,12 +64,29 @@ int main() {
     // cout << "ans = " << ans << endl;
 
     // c
-    Coord3D pos = {0, 0, 100.0};
-    Coord3D vel = {1, -5, 0.2};
+    // Coord3D pos = {0, 0, 100.0};
+    // Coord3D vel = {1, -5, 0.2};
 
-    move(&pos, &vel, 2.0); // object pos gets changed
-    cout << pos.x << " " << pos.y << " " << pos.z << endl;
-    // prints: 2 -10 100.4
+    // move(&pos, &vel, 2.0); // object pos gets changed
+    // cout << pos.x << " " << pos.y << " " << pos.z << endl; // prints: 2 -10 100.4
+
+    // e
+    double x, y, z;
+    cout << "Enter position: ";
+    cin >> x >> y >> z;
+    Coord3D *ppos = createCoord3D(x,y,z);
+
+    cout << "Enter velocity: ";
+    cin >> x >> y >> z;
+    Coord3D *pvel = createCoord3D(x,y,z);
+
+    move(ppos, pvel, 10.0);
+
+    cout << "Coordinates after 10 seconds: "
+         << (*ppos).x << " " << (*ppos).y << " " << (*ppos).z << endl;
+
+    deleteCoord3D(ppos); // release memory
+    deleteCoord3D(pvel);
 
     return 0;
 }
