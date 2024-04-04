@@ -20,17 +20,21 @@ double length(Coord3D *p){
 }
 
 Coord3D * fartherFromOrigin(Coord3D *p1, Coord3D *p2){
-    if(length(*p1) > length(*p2)){
-        return *p1;
+    if(length(p1) > length(p2)){
+        return p1;
     } else {
-        return *p2;
+        return p2;
     }
 }
 
 void move(Coord3D *ppos, Coord3D *pvel, double dt){
-
+    ppos->x = pvel.x * dt + ppos->x;
+    ppos->y = pvel.x * dt + ppos->y;
+    ppos->z = pvel.x * dt + ppos->z;
 }
-
+// x' = x + vel.x * dt;
+// y' = y + vel.x * dt;
+// z' = z + vel.x * dt;
 int main() {
     // a
     // Coord3D pointP = {10, 20, 30};
