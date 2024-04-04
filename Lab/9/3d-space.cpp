@@ -35,7 +35,8 @@ void move(Coord3D *ppos, Coord3D *pvel, double dt){
 
 // allocate memory and initialize
 Coord3D* createCoord3D(double x, double y, double z){
-    Coord3D a = new Coord3D;
+    
+    Coord3D *a = new Coord3D;
     a->x = x;
     a->y = y;
     a->z = z;
