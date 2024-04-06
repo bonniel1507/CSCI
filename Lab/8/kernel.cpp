@@ -104,16 +104,13 @@ int main() {
 			int h2 = (row == h-1) ? 0 : img[row+1][col];
 			int i = (row == h-1 || col == w-1) ? 0 : img[row+1][col+1];
 
-			int c;
-			if((g+2*h2+i)-(a+2*b+c) < 0){
-				c = 0;
-			} else if((g+2*h2+i)-(a+2*b+c) > 255){
-				c = 255;
+			if((g+(2*h2)+i)-(a+(2*b)+c) < 0){
+				out[row][col] = 0;
+			} else if((g+(2*h2)+i)-(a+(2*b)+c) > 255){
+				out[row][col] = 255;
 			} else {
-				c = (g+2*h2+i)-(a+2*b+c);
+				out[row][col] = (g+(2*h2)+i)-(a+(2*b)+c);
 			}
-			
-			out[row][col] = c;
 		}
 	}
 
