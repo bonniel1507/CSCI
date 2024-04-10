@@ -7,15 +7,17 @@ int main() {
 
 	MemoryGame game;
 	game.~MemoryGame();
+	game.display();
+	game.play();
 
-	MemoryGame game2(3, 9);
-	game2.~MemoryGame();
+	// MemoryGame game2(3, 9);
+	// game2.~MemoryGame();
 
-	string words[] = {"Hello", "Hi", "Hey"};
-	int size = sizeof(words) / sizeof(words[0]);
-	MemoryGame game3(words, 3, 9);
-	game3.~MemoryGame();
-	game3.display();
+	// string words[] = {"Hello", "Hi", "Hey"};
+	// int size = sizeof(words) / sizeof(words[0]);
+	// MemoryGame game3(words, 3, 9);
+	// game3.~MemoryGame();
+	// game3.display();
 
 	return 0;
 }

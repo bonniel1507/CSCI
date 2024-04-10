@@ -122,14 +122,8 @@ void printSeparatedLine(int size) {
 	cout << endl;
 }
 
-// int length2(int num){
-// 	int l = 0;
-// 	while(num != 0){
-// 		l++;
-// 		num /= 10;
-// 	}
-// 	return l;
-// }
+string arr[] = {"111", "222", "111", "444", "222", "444", "", ""};
+bool barr[] = {false, false, false, false, false, false, false, false};
 
 void MemoryGame::display() const {
 //TODO: placeholder, do not need to implement in Task A
@@ -142,23 +136,55 @@ void MemoryGame::display() const {
 	//then pad a space to its left.
 	cout << endl;
 
-	string arr[] = {"111", "222", "333", "444", "555", "666", "777", "", ""};
-
 	printSeparatedLine(numSlots);
 	for(int i = 0; i < numSlots; i++){
-
 		if(bShown[i]){
-			cout << "|" << setw(5) << arr[i];
+			cout << "|" << setw(5) << values[i];
 		} else {
-			cout << "|" << setw(5) << " ";
+			cout << "|" << setw(5) << "";
 		}
-		// if(arr[i] == ""){//values[i] == ""){
-		// 	cout << "   ";
-		// } else {
-		// 	// cout << values[i];
-			// cout << 5-arr[i].length();
-		// }
 	}
 	cout << "|" << endl;
 	printSeparatedLine(numSlots);
+}
+
+void MemoryGame::play() {
+	randomize();
+	display();
+
+	int round = 0, pairs = 0, ind1 = numSlots+1, ind2 = numSlots+2;
+	while(pairs < numPairs){
+		for(int i = 0; i < 2; i++){
+			round++;
+			int input;
+			cout << "Round " << round << ":" << endl;
+			cout << "Enter a unflipped card in [0, " << numSlots-1 << "]: ";
+			cin >> input;
+			while(input < 0 || input >= numSlots || bShown[input]){
+				if(bShown[input]){
+					cout << "The card is flipped already. Re-enter: ";
+				} else {
+					cout << "input is not in [0, " << numSlots-1 << "]. Re-enter: ";
+				}
+				cin >> input;
+			}
+			bShown[input] = true;
+
+			if(i == 0){
+				ind1 = input;
+			} else {
+				ind2 = input;
+			}
+
+			if(values[ind1] != values[ind2] && i == 1){
+				bShown[ind1] = false;
+				bShown[ind2] = false;
+			} else if(i == 1) {
+				pairs++;
+			}
+
+			display();
+		}
+	}
+	cout << "Congratulations! Found out all pairs in " << round << " rounds" << endl;
 }
