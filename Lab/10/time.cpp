@@ -58,15 +58,18 @@ void printMovie(Movie mv){
     }
     cout << mv.title << " " << g << " (" << mv.duration << " min)";
 }
-// Back to the Future COMEDY (116 min)
 
 void printTimeSlot(TimeSlot ts){
     Time t = addMinutes(ts.startTime, ts.movie.duration);
     printMovie(ts.movie);
-    // cout << "start " << ts.startTime.h<< ":" << ts.startTime.m <<
     cout << " [starts at " << ts.startTime.h<< ":" << ts.startTime.m << ", ends by " << t.h << ":" << t.m << "]" << endl;
 }
-// [starts at 9:15, ends by 11:11]
+
+TimeSlot scheduleAfter(TimeSlot ts, Movie nextMovie){
+    Time t = addMinutes(ts.startTime, ts.movie.duration);
+    TimeSlot n = {nextMovie, t};
+    return n;
+}
 
 int main() {
 
@@ -94,18 +97,18 @@ int main() {
     // cout << t2.h << ":" << t2.m << endl;
 
     // c
-    Movie m1;
-    m1.title = "Back to the Future";
-    m1.genre = COMEDY;
-    m1.duration = 116;
+    // Movie m1;
+    // m1.title = "Back to the Future";
+    // m1.genre = COMEDY;
+    // m1.duration = 116;
 
-    // TimeSlot t1;
-    // t1.movie = m1;
-    // t1.startTime =
+    // // TimeSlot t1;
+    // // t1.movie = m1;
+    // // t1.startTime =
 
-    TimeSlot t2 = {m1, {12,16}};
+    // TimeSlot t2 = {m1, {12,16}};
 
-    printTimeSlot(t2);
+    // printTimeSlot(t2);
 
     return 0;
 }
