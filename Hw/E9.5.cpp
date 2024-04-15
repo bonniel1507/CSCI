@@ -18,16 +18,16 @@ class Rectangle {
 		double height;
 };
 
-Rectangle::Rectangle(int w, int h){
-    width = w;
-    height = h;
+Rectangle::Rectangle(double input_w, double input_h){
+    width = input_w;
+    height = input_h;
 }
 
-float Rectangle::get_perimeter(){
+double Rectangle::get_perimeter(){
     return (2*width) + (2*height);
 }
 
-float Rectangle::get_area(){
+double Rectangle::get_area(){
     return width * height;
 }
 
