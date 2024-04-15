@@ -8,25 +8,30 @@
 using namespace std;
 
 class Rectangle {
-public:
-    int width;
-    int height;
+	public:
+		Rectangle(double input_w, double input_h);
+		double get_perimeter();
+		double get_area();
+		void resize(double factor);
+	private:
+		double width;
+		double height;
 };
 
-Rectangle(int w, int h){
+Rectangle::Rectangle(int w, int h){
     width = w;
     height = h;
 }
 
-float get_perimeter(){
+float Rectangle::get_perimeter(){
     return (2*width) + (2*height);
 }
 
-float get_area(){
+float Rectangle::get_area(){
     return width * height;
 }
 
-void resize(double factor){
+void Rectangle::resize(double factor){
     width *= factor;
     height *= factor;
 }
