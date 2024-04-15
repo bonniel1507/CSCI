@@ -38,6 +38,11 @@ void Circuit::toggle_first_switch(){
     } else {
         first_switch = 0;
     }
+    if(lamp_state == 0){
+        lamp_state = 1;
+    } else {
+        lamp_state = 0;
+    }
 }
 
 void Circuit::toggle_second_switch(){
@@ -45,6 +50,11 @@ void Circuit::toggle_second_switch(){
         second_switch = 1;
     } else {
         second_switch = 0;
+    }
+    if(lamp_state == 0){
+        lamp_state = 1;
+    } else {
+        lamp_state = 0;
     }
 }
 
