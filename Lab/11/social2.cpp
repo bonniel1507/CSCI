@@ -87,7 +87,7 @@ Network::Network(){
     // return true if the operation was successful, otherwise return false
 int Network::findID (string usrn){
     for(int i = 0; i < MAX_USERS; i++){
-        if(usrn == profiles[i]){
+        if(usrn == profiles[i].getUsername()){
             return i;
         }
     }
