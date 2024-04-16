@@ -17,6 +17,13 @@ public:
     double vz;
 };
 
+class Coord3D {
+public:
+    double x;
+    double y;
+    double z;
+};
+
 // dynamically allocate memory for a particle and initialize it
 Particle* createParticle(double x, double y, double z, double vx, double vy, double vz){
     Particle *a = new Particle;
@@ -40,10 +47,10 @@ Coord3D getPosition(Particle *p){
     return h;
 }
 // update particle's position after elapsed time dt
-void move(Particle *p, double dt){
-    p->x *= dt;
-    p->y *= dt;
-    p->z *= dt;
+void move(Particle *p,  double dt){
+    p->x = p->vx * dt + p->x;
+    p->y = p->vy * dt + p->y;
+    p->z = p->vz * dt + p->z;
 }
 // delete all memory allocated for the particle passed by pointer
 void deleteParticle(Particle *p){

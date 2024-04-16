@@ -2,7 +2,7 @@
 // bonnie.lei49@myhunter.cuny.edu
 // Course: CSCI 135
 // Instructor: Tong Yi
-// Assignment: 10c
+// Assignment: 10d
 
 #include <iostream>
 using namespace std;
@@ -45,8 +45,6 @@ Time addMinutes(Time time0, int min){
     return n;
 }
 
-
-
 void printMovie(Movie mv){
     string g;
     switch (mv.genre) {
@@ -69,6 +67,23 @@ TimeSlot scheduleAfter(TimeSlot ts, Movie nextMovie){
     Time t = addMinutes(ts.startTime, ts.movie.duration);
     TimeSlot n = {nextMovie, t};
     return n;
+}
+
+bool timeOverlap(TimeSlot ts1, TimeSlot ts2){
+    Time t1;
+    int movie1Start = minutesSinceMidnight(ts1.startTime);
+    int movie2Start = minutesSinceMidnight(ts2.startTime);
+    if(movie1Start < movie2Start){
+        t1 = ts1.startTime;
+        int ttemp = minutesSinceMidnight(addMinutes(t1, ts1.movie.duration));
+        return (ttemp >= movie2Start);
+    } else {
+        t1 = ts2.startTime;
+        int ttemp = minutesSinceMidnight(addMinutes(t1, ts2.movie.duration));
+        return (ttemp >= movie1Start);
+    }
+
+    // return
 }
 
 int main() {
