@@ -25,6 +25,16 @@ public:
     void setDisplayName(string dspn);
 };
 
+Profile::Profile(string usrn, string dspn){
+    username = usrn;
+    displayname = dspn;
+}
+    // Default Profile constructor (username="", displayname="")
+Profile::Profile(){
+    username = "";
+    displayname = "";
+}
+
 string Profile::getUsername(){
     return username;
 } // returns the username
@@ -33,7 +43,7 @@ string Profile::getFullName(){
     return displayname + " (@" + username + ")";
 } // returns the string in the format “displayname (@username)”
 
-void Profile::setDisplayname(string dspn){
+void Profile::setDisplayName(string dspn){
     displayname = dspn;
 } // allows to change the displayname property
 
