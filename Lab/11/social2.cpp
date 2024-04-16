@@ -100,13 +100,15 @@ bool Network::addUser(string usrn, string dspn){
             return false;
         }
     }
-    for(int i = 0; i < dspn.length(); i++){
-        if(isspace(dspb[i])){
-            return false;
-        }
-    }
     if(findID(usrn) != -1){
         return false;
+    } else {
+        if(numUsers < 20){
+            profiles[numUsers + 1] = Profile{usrn, dspn};
+            numUsers++;
+        } else {
+            return false;
+        }
     }
     return true;
 }
