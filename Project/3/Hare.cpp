@@ -2,16 +2,11 @@
 // bonnie.lei49@myhunter.cuny.edu
 // Course: CSCI 135
 // Instructor: Tong Yi
-// Assignment:
-#include <vector>
+// Assignment: project 3
+
 #include <iostream>
-#include <string>
 #include "Hare.hpp"
-//g++ -std=c++11 main.cpp would be fine with #include "Hare.cpp"
-//#include <vector> //included in "Hare.hpp" already
 using namespace std;
-vector<int> patterns;
-int position;
 
 Hare::Hare(){
     position = 0;
@@ -35,8 +30,10 @@ After calling default constructor, data member position is 0
        //move 12 squares to the left 10% of the time,
        //move 1 square to the right 30% of the time,
        //move 2 squares to the left 20% of the time.
-Hare::Hare(std::vector<int> patterns, int position){
 
+Hare::Hare(std::vector<int> patterns, int position){
+    this->patterns = patterns;
+    this->position = position;
 }
 /*
 After calling constructor Hare(std::vector<int>, int), data member patterns is {1,-2,6}
@@ -44,7 +41,10 @@ After calling constructor Hare(std::vector<int>, int), data member position is 2
 */
 
 Hare::Hare(int* arr, int size, int position){
-
+    for(int i = 0; i < size; i++){
+        patterns.push_back(arr[i]);
+    }
+    this->position = position;
 }
 /*
 After calling constructor Hare(int*, int, int), data member patterns is {1,1,2,-3,5}
@@ -52,16 +52,16 @@ After calling constructor Hare(int*, int, int), data member position is 6
 */
 
 void Hare::move(){
-
+    position += patterns[rand() % patterns.size()];
 }
 // After calling move method, data member position is 1
 
 int Hare::getPosition() const{
-    return -1;
+    return position;
 }
 // After setting hare’s position to be 10 and calling getPosition method, data member position is 10
 
 void Hare::setPosition(int position){
-
+    this->position = position;
 }
 // After hare.setPosition(3); data member position is 3
