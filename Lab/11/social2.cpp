@@ -47,19 +47,19 @@ void Profile::setDisplayName(string dspn){
     displayname = dspn;
 } // allows to change the displayname property
 
-int main() {
-    Profile p1("marco", "Marco");
-    cout << p1.getUsername() << endl; // marco
-    cout << p1.getFullName() << endl; // Marco (@marco)
+// int main() {
+//     Profile p1("marco", "Marco");
+//     cout << p1.getUsername() << endl; // marco
+//     cout << p1.getFullName() << endl; // Marco (@marco)
 
-    p1.setDisplayName("Marco Rossi");
-    cout << p1.getUsername() << endl; // marco
-    cout << p1.getFullName() << endl; // Marco Rossi (@marco)
+//     p1.setDisplayName("Marco Rossi");
+//     cout << p1.getUsername() << endl; // marco
+//     cout << p1.getFullName() << endl; // Marco Rossi (@marco)
 
-    Profile p2("tarma1", "Tarma Roving");
-    cout << p2.getUsername() << endl; // tarma1
-    cout << p2.getFullName() << endl; // Tarma Roving (@tarma1)
-}
+//     Profile p2("tarma1", "Tarma Roving");
+//     cout << p2.getUsername() << endl; // tarma1
+//     cout << p2.getFullName() << endl; // Tarma Roving (@tarma1)
+// }
 
 class Network {
 private:
@@ -95,22 +95,24 @@ int Network::findID (string usrn){
 }
 
 bool Network::addUser(string usrn, string dspn){
+                cout << "jhgf"<< usrn << " " << numUsers;
     for(int i = 0; i < usrn.length(); i++){
-        if(isspace(usrn[i])){
+        if(iswalnum(usrn[i]) == 0){
             return false;
         }
     }
     if(findID(usrn) != -1){
         return false;
     } else {
-        if(numUsers < 20){
-            profiles[numUsers + 1] = Profile{usrn, dspn};
+        if(numUsers <= 19){
+
+            profiles[numUsers] = Profile{usrn, dspn};
             numUsers++;
+            return true;
         } else {
             return false;
         }
     }
-    return true;
 }
 /*
 This function receives the username and display name of a new user, the new user can be signed up only if the following conditions are met:

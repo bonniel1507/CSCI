@@ -4,12 +4,13 @@
 // Instructor: Tong Yi
 // Assignment: project 3
 
-#include <iostream>
+// #include <iostream>
+#include <cstdlib>
 #include "Hare.hpp"
 using namespace std;
 
 Hare::Hare(){
-    position = 0;
+
     patterns.push_back(0);
     patterns.push_back(0);
     patterns.push_back(9);
@@ -19,7 +20,8 @@ Hare::Hare(){
     patterns.push_back(1);
     patterns.push_back(1);
     patterns.push_back(-2);
-    patterns.push_back(2);
+    patterns.push_back(-2);
+    position = 0;
 }
 /*
 After calling default constructor, data member patterns is {0,0,9,9,-12,1,1,1,-2,-2}
