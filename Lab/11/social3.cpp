@@ -93,7 +93,7 @@ bool Network::addUser(string usrn, string dspn){
     }
 }
 
-bool follow(string usrn1, string usrn2){
+bool Network::follow(string usrn1, string usrn2){
     if(findID(usrn1) == -1 || findID(usrn2) == -1){
         return false;
     } else {
@@ -102,8 +102,21 @@ bool follow(string usrn1, string usrn2){
     }
 }
 
-void printDot(){
+void Network::printDot(){
+    cout << "digraph {" << endl;
 
+    for(int i = 0; i < numUsers; i++){
+        cout << "\t\"@" << profiles[i].getUsername() << "\"" << endl;
+    }
+
+    for(int i = 0; i < numUsers; i++){
+        for(int j = 0; j < numUsers; j++){
+            if(follow(profiles[i].getUsername(), profiles[j].getUsername())){
+                cout << "\t\"@" << profiles[i].getUsername() << "\" -> \"@" << profiles[j].getUsername() << "\"" << endl;
+            }
+        }
+    }
+    cout << "}" << endl;
 }
 /*
 digraph {
