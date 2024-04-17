@@ -111,7 +111,7 @@ void Network::printDot(){
 
     for(int i = 0; i < numUsers; i++){
         for(int j = 0; j < numUsers; j++){
-            if(follow(profiles[i].getUsername(), profiles[j].getUsername())){
+            if(following[i][j]){
                 cout << "\t\"@" << profiles[i].getUsername() << "\" -> \"@" << profiles[j].getUsername() << "\"" << endl;
             }
         }
