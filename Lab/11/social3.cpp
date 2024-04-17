@@ -2,7 +2,7 @@
 // bonnie.lei49@myhunter.cuny.edu
 // Course: CSCI 135
 // Instructor: Tong Yi
-// Assignment: lab 11b
+// Assignment: lab 11c
 
 #include <iostream>
 using namespace std;
@@ -103,7 +103,7 @@ bool follow(string usrn1, string usrn2){
 }
 
 void printDot(){
-    
+
 }
 /*
 digraph {
