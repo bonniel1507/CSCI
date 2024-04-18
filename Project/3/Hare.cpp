@@ -4,13 +4,11 @@
 // Instructor: Tong Yi
 // Assignment: project 3
 
-// #include <iostream>
 #include <cstdlib>
 #include "Hare.hpp"
 using namespace std;
 
 Hare::Hare(){
-
     patterns.push_back(0);
     patterns.push_back(0);
     patterns.push_back(9);
@@ -55,15 +53,12 @@ After calling constructor Hare(int*, int, int), data member position is 6
 
 void Hare::move(){
     position += patterns[rand() % patterns.size()];
-}
-// After calling move method, data member position is 1
+} // After calling move method, data member position is 1
 
 int Hare::getPosition() const{
     return position;
-}
-// After setting hare’s position to be 10 and calling getPosition method, data member position is 10
+} // After setting hare’s position to be 10 and calling getPosition method, data member position is 10
 
 void Hare::setPosition(int position){
     this->position = position;
-}
-// After hare.setPosition(3); data member position is 3
+} // After hare.setPosition(3); data member position is 3
