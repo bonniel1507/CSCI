@@ -2,10 +2,15 @@
 // bonnie.lei49@myhunter.cuny.edu
 // Course: CSCI 135
 // Instructor: Tong Yi
-// Assignment: lab 11c
+// Assignment: lab 11d
 
 #include <iostream>
 using namespace std;
+
+struct Post{
+    string username;
+    string message;
+};
 
 class Profile {
 private:
@@ -29,11 +34,11 @@ Profile::Profile(string usrn, string dspn){
     username = usrn;
     displayname = dspn;
 }
-    // Default Profile constructor (username="", displayname="")
+
 Profile::Profile(){
     username = "";
     displayname = "";
-}
+} // Default Profile constructor (username="", displayname="")
 
 string Profile::getUsername(){
     return username;
@@ -52,13 +57,18 @@ private:
     static const int MAX_USERS = 20;
     int numUsers;
     Profile profiles[MAX_USERS];
-    bool following[MAX_USERS][MAX_USERS];    // new
+    bool following[MAX_USERS][MAX_USERS];
+    static const int MAX_POSTS = 100;         // new
+    int numPosts;                             // new
+    Post posts[MAX_POSTS];                    // new
     int findID (string usrn);
 public:
     Network();
     bool addUser(string usrn, string dspn);
-    bool follow(string usrn1, string usrn2); // new
-    void printDot();                         // new
+    bool follow(string usrn1, string usrn2);
+    void printDot();
+    bool writePost(string usrn, string msg);  // new
+    void printTimeline(string usrn);          // new void?
 };
 
 Network::Network(){
@@ -118,17 +128,31 @@ void Network::printDot(){
     }
     cout << "}" << endl;
 }
-/*
-digraph {
-  "@mario"
-  "@luigi"
-  "@yoshi"
 
-  "@mario" -> "@luigi"
-  "@luigi" -> "@mario"
-  "@luigi" -> "@yoshi"
-  "@yoshi" -> "@mario"
+bool Network::writePost(string usrn, string msg){
+    if(findID(usrn) == -1 || numPosts == 100){
+        return false;
+    } else {
+        posts[numPosts] = Post{usrn, msg};
+        numPosts++;
+        return true;
+    }
+} // adds a new post to the posts array. It performs successfully if the username is found in the network and the posts array is not full, in this case the function also should return true. Otherwise, nothing is added and the function returns false.
+
+void Network::printTimeline(string usrn){ // void?
+    for(int i = numPosts-1; i >= 0; i--){
+        if(posts[i].username == usrn || following[findID(usrn)][i]){
+            cout << profiles[findID(posts[i].username)].getFullName() << ": " << posts[i].message << endl;
+        }
+    }
 }
+/*
+prints out the timeline of the user usrn. The timeline of a user is the list of all posts by the user and by the people they follow, presented in reverse-chronological order. They should be printed in the following format:
+
+Displayname (@username): message
+Displayname (@username): message
+Displayname (@username): message
+Displayname (@username): message
 */
 
 int main() {
@@ -138,26 +162,29 @@ int main() {
     nw.addUser("luigi", "Luigi");
     nw.addUser("yoshi", "Yoshi");
 
-    // make them follow each other
     nw.follow("mario", "luigi");
-    nw.follow("mario", "yoshi");
     nw.follow("luigi", "mario");
     nw.follow("luigi", "yoshi");
     nw.follow("yoshi", "mario");
-    nw.follow("yoshi", "luigi");
 
-    // add a user who does not follow others
-    nw.addUser("wario", "Wario");
+    // write some posts
+    nw.writePost("mario", "It's a-me, Mario!");
+    nw.writePost("luigi", "Hey hey!");
+    nw.writePost("mario", "Hi Luigi!");
+    nw.writePost("yoshi", "Test 1");
+    nw.writePost("yoshi", "Test 2");
+    nw.writePost("luigi", "I just hope this crazy plan of yours works!");
+    nw.writePost("mario", "My crazy plans always work!");
+    nw.writePost("yoshi", "Test 3");
+    nw.writePost("yoshi", "Test 4");
+    nw.writePost("yoshi", "Test 5");
 
-    // add clone users who follow @mario
-    for(int i = 2; i < 6; i++) {
-        string usrn = "mario" + to_string(i);
-        string dspn = "Mario " + to_string(i);
-        nw.addUser(usrn, dspn);
-        nw.follow(usrn, "mario");
-    }
-    // additionally, make @mario2 follow @luigi
-    nw.follow("mario2", "luigi");
+    cout << endl;
+    cout << "======= Mario's timeline =======" << endl;
+    nw.printTimeline("mario");
+    cout << endl;
 
-    nw.printDot();
+    cout << "======= Yoshi's timeline =======" << endl;
+    nw.printTimeline("yoshi");
+    cout << endl;
 }
