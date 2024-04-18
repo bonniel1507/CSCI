@@ -141,7 +141,7 @@ bool Network::writePost(string usrn, string msg){
 
 void Network::printTimeline(string usrn){ // void?
     for(int i = numPosts-1; i >= 0; i--){
-        if(posts[i].username == usrn || following[findID(usrn)][i]){
+        if(posts[i].username == usrn || following[findID(usrn)][findID(posts[i].username)]){
             cout << profiles[findID(posts[i].username)].getFullName() << ": " << posts[i].message << endl;
         }
     }
