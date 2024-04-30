@@ -8,33 +8,34 @@
 #include "Road.hpp"
 using namespace std;
 
-Road(){
-    for(int i = 0; i < 20; i++){
-        blocks.push_back('');
+Road::Road(){
+    for(int i = 0; i < 70; i++){
+        blocks.push_back(' ');
     }
 }
 
-Road(int length){
+Road::Road(int length){
     if(length < 0){
-        length = 20;
+        length = 70;
     }
     for(int i = 0; i < length; i++){
-        blocks.push_back('');
+        blocks.push_back(' ');
     }
 }
 
-void mark(int index, char ch){
+void Road::mark(int index, char ch){
     if(index > 0 && index <= blocks.size()){
         blocks[index] = ch;
     }
 }
 
-void display() const{
+void Road::display() const{
     for(int i = 0; i < blocks.size(); i++){
         cout << blocks[i];
     }
+    cout << endl;
 }
 
-int length() const{
+int Road::length() const{
     return blocks.size();
 }
