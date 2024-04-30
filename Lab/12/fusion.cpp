@@ -8,24 +8,6 @@
 #include <vector>
 using namespace std;
 
-vector<int> makeVector(int n){
-    vector<int> v;
-    for(int i = 0; i < n; i++){
-        v.push_back(i);
-    }
-    return v;
-}
-
-vector<int> goodVibes(const vector<int> v){
-    vector<int> e;
-    for(int i = 0; i < v.size(); i++){
-        if(v[i] > 0){
-            e.push_back(v[i]);
-        }
-    }
-    return e;
-}
-
 void gogeta(vector<int> &goku, vector<int> &vegeta){
     while(vegeta.size() > 0){
         goku.push_back(vegeta[0]);
@@ -34,9 +16,6 @@ void gogeta(vector<int> &goku, vector<int> &vegeta){
 }
 
 int main() {
-// comment
-// comment
-
     vector<int> v1{1,2,3};
     vector<int> v2{4,5};
 

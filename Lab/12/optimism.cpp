@@ -8,14 +8,6 @@
 #include <vector>
 using namespace std;
 
-vector<int> makeVector(int n){
-    vector<int> v;
-    for(int i = 0; i < n; i++){
-        v.push_back(i);
-    }
-    return v;
-}
-
 vector<int> goodVibes(const vector<int> v){
     vector<int> e;
     for(int i = 0; i < v.size(); i++){
@@ -27,7 +19,9 @@ vector<int> goodVibes(const vector<int> v){
 }
 
 int main() {
-// comment
-// comment
+    vector<int> v{1,2,-1,3,4,-1,6};
+
+    goodVibes(v); // returns [1,2,3,4,6]
+
     return 0;
 }
