@@ -14,6 +14,14 @@ void printRange(int left, int right){
     }
 }
 
+int sumRange(int left, int right){
+    if(left == right){
+        return left;
+    } else {
+        return sumRange(left+1, right);
+    }
+}
+
 int main() {
     printRange(-2, 10);
 
