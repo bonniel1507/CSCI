@@ -15,10 +15,20 @@ void printRange(int left, int right){
 }
 
 int sumRange(int left, int right){
-    if(left == right){
+    if(left > right){
+        return 0;
+    } else if(left == right){
         return left;
     } else {
-        return sumRange(left+1, right);
+        return left + sumRange(left+1, right);
+    }
+}
+
+int sumArray(int *arr, int size){
+    if(size == 0){
+        return arr[0];
+    } else {
+        return arr[size-1] + sumArray(arr, size-2);
     }
 }
 
