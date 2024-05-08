@@ -52,15 +52,27 @@ bool nestedParens(string s){
     }
 }
 
-int main() {
-    cout << nestedParens("((()))") << endl;      // true (1)
-    cout << nestedParens("()") << endl;          // true (1)
-    cout << nestedParens("") << endl;            // true (1)
+bool d(int *prices, int size, int j, int k){
+    if(size == 0){
+        return j == k;
+    }
+    if(d(prices + 1, size - 1, j + prices[0], k)){
+        return true;
+    }
+    if(d(prices + 1, size - 1, j, k + prices[0])){
+        return true;
+    }
+    return false;
+}
 
-    cout << nestedParens("(((") << endl;         // false (0)
-    cout << nestedParens("(()") << endl;         // false (0)
-    cout << nestedParens(")(") << endl;          // false (0)
-    cout << nestedParens("a(b)c") << endl;       // false (0)
+bool divisible(int *prices, int size){
+    return d(prices, size, 0, 0);
+}
+
+int main() {
+    int prices [] = {10, 15, 12, 18, 19, 17, 13, 35, 33};
+
+    cout << divisible(prices, 9) << endl;
 
     return 0;
 }
