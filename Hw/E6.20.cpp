@@ -56,6 +56,19 @@ vector<int> merge_sorted(vector<int> a, vector<int> b){
         }
     }
     */
+    /* selection sort
+    for(int i = 0; i < c.size()-1; i++){
+        int min = i;
+        for(int j = i+1; j < c.size(); j++){
+            if(c[min] > c[j]){
+                min = j;
+            }
+        }
+        int temp = c[i];
+        c[i] = c[min];
+        c[min] = temp;
+    }
+    */
     return c;
 }
 
