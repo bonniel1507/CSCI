@@ -44,6 +44,18 @@ vector<int> merge_sorted(vector<int> a, vector<int> b){
             }
         }
     }
+
+    /* insertion sort
+    for(int i = 0; i < c.size()-1; i++){
+        for(int j = i+1; j > 0; j--){
+            if(c[j] < c[j-1]){
+                int temp = c[j];
+                c[j] = c[j-1];
+                c[j-1] = temp;
+            }
+        }
+    }
+    */
     return c;
 }
 
