@@ -1,0 +1,5 @@
+# Bonnie Lei
+# bonnie.lei49@myhunter.cuny.edu
+# Using Unix shell commands, write a script that counts the number of .py files in current working directory.
+
+ls -l | grep ".py" | wc -l
