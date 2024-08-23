@@ -2,7 +2,7 @@
 // bonnie.lei49@myhunter.cuny.edu
 // Course: CSCI 135
 // Instructor: Tong Yi
-// Assignment: lab13a
+// Assignment: lab13
 
 #include <iostream>
 using namespace std;

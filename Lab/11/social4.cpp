@@ -68,7 +68,7 @@ public:
     bool follow(string usrn1, string usrn2);
     void printDot();
     bool writePost(string usrn, string msg);  // new
-    void printTimeline(string usrn);          // new void?
+    void printTimeline(string usrn);          // new changed bool to void
 };
 
 Network::Network(){
@@ -114,11 +114,9 @@ bool Network::follow(string usrn1, string usrn2){
 
 void Network::printDot(){
     cout << "digraph {" << endl;
-
     for(int i = 0; i < numUsers; i++){
         cout << "  \"@" << profiles[i].getUsername() << "\"" << endl;
     }
-
     for(int i = 0; i < numUsers; i++){
         for(int j = 0; j < numUsers; j++){
             if(following[i][j]){
@@ -139,7 +137,7 @@ bool Network::writePost(string usrn, string msg){
     }
 } // adds a new post to the posts array. It performs successfully if the username is found in the network and the posts array is not full, in this case the function also should return true. Otherwise, nothing is added and the function returns false.
 
-void Network::printTimeline(string usrn){ // void?
+void Network::printTimeline(string usrn){ // changed bool to void
     for(int i = numPosts-1; i >= 0; i--){
         if(posts[i].username == usrn || following[findID(usrn)][findID(posts[i].username)]){
             cout << profiles[findID(posts[i].username)].getFullName() << ": " << posts[i].message << endl;

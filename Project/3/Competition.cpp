@@ -9,9 +9,9 @@
 using namespace std;
 
 Competition::Competition(){
-    rabbit = new Hare();
-    tor = new Tortoise();
-    lane = new Road();
+    // rabbit = Hare();
+    // tor = Tortoise();
+    // lane = Road();
 }
 /*
 In the default constructor, data member rabbit is an object instantiated by default constructor of Hare class; data member tor is an object instantiated by default constructor of Tortoise class; and lane is an object instantiated by default constructor of Road class.
@@ -20,22 +20,22 @@ In the default constructor, data member rabbit is an object instantiated by defa
 Competition::Competition(Hare coney, Tortoise cooter, int length){
     rabbit = coney;
     tor = cooter;
-    lane.Road(length);
+    lane = Road(length);
 }
 /*
 In the non-default constructor, data member rabbit is set to be the formal parameter coney, data member tor is set to be the formal parameter cooter, and data member lane is an object instantiated by non-default constructor of Road class that takes the formal parameter length in non-default constructor of Competition class as an actual parameter.
 */
 
 void Competition::play(){
-    int finish = lane.length();
+    int finish = lane.length()-1;
     int round = 1;
 
-    while(rabbit.getPosition() < finish || tor.getPosition() < finish){
+    while(rabbit.getPosition() < finish && tor.getPosition() < finish){
         rabbit.move();
         if(rabbit.getPosition() < 0){
             rabbit.setPosition(0);
         } else if(rabbit.getPosition() > finish){
-            rabbit.setPosition(finish - 1);
+            rabbit.setPosition(finish);
         }
         lane.mark(rabbit.getPosition(), 'H');
 
@@ -43,16 +43,18 @@ void Competition::play(){
         if(tor.getPosition() < 0){
             tor.setPosition(0);
         } else if(tor.getPosition() > finish){
-            tor.setPosition(finish - 1);
+            tor.setPosition(finish);
         }
         lane.mark(tor.getPosition(), 'T');
 
-        cout << round << lane.display();
+        cout << round;
+        lane.display();
         if(rabbit.getPosition() == tor.getPosition()){
             cout << "Ouch. Tortoise bites hare." << endl;
         }
 
-        lane.Road(finish);
+        lane.mark(rabbit.getPosition(), ' ');
+        lane.mark(tor.getPosition(), ' ');
         round++;
     }
 
@@ -61,7 +63,7 @@ void Competition::play(){
     } else if(rabbit.getPosition() > tor.getPosition()){
         cout << "Yuck. Hare wins." << endl;
     } else {
-        cout << "" << endl;
+        cout << "Yay! Tortoise wins!" << endl;
     }
 }
 /*
